@@ -1,0 +1,19 @@
+declare
+ cursor c1 is
+      select ename,sal from emp;
+ empcur c1%rowtype;
+
+BEGIN
+ open c1;
+ loop
+   fetch c1 into empcur;
+   exit when c1%notfound;
+  dbms_output.put_line
+  (empcur.ename||' '||empcur.sal);
+
+   insert into emp2(ename, sal) 
+  values(empcur.ename, empcur.sal);
+  end loop;
+ close c1;
+end;
+

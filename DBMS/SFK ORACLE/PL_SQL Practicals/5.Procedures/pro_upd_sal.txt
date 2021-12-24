@@ -1,0 +1,8 @@
+create or replace procedure upd_sal(p_eno number, p_sal number)
+is
+begin
+        update emp
+        set sal = p_sal
+        where empno=p_eno;
+end;
+/

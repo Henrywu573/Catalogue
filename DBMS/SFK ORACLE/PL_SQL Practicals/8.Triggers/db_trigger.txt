@@ -1,0 +1,7 @@
+create or replace trigger logon_trig
+after logon  ON Database
+begin
+ 
+        insert into log values
+        (user, sysdate, 'Logging ON');
+     end;

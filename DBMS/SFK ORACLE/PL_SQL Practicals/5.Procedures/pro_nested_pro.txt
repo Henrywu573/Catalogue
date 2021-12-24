@@ -1,0 +1,14 @@
+create or replace procedure
+ process_emp(p_sal number)
+iS
+     cursor c1 is
+            select empno from emp;
+begin
+        for empcur in c1 
+        loop
+          upd_sal(empcur.empno,p_sal);                          end loop;                         
+end;
+
+
+
+

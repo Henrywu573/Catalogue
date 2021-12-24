@@ -1,0 +1,19 @@
+Author:Nadeem Hilal
+Purpose:A simple application to show working of signal & slots.
+Description:Three QWidgets QLabel, QPushButton and QLineEdit,
+            whateever is typed inside the QLineEdit, after user clicks the QPushButton
+            the same text from the QLineEdit is Displayed on QLabel.
+
+How to compile the code to application on linux machine.
+    qmake-qt4, g++, must be installed on machine, and other qt4 packages required for Qt Development.
+1: Create a directory hello.
+2: Copy MyForm.h, MyForm.cpp, main.cpp into this  "hello" directory.
+3: cd into hello, the write below commands one by one.
+4: qmake-qt4 -project main.cpp
+5: qmake-qt4 hello.pro
+6: qmake-qt4
+7: make
+8: ./hello
+
+
+Enjoy :)

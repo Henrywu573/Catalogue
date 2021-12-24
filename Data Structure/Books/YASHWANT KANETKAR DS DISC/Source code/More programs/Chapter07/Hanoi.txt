@@ -1,0 +1,7 @@
+Tower Of Hanoi
+
+Tower of hanoi is a historical problem, which can be easily expressed using recursion. There are N disks of decreasing size stacked on one needle, and two other empty needles. It is required to stack all the disks onto a second needle in the decreasing order of size. The third needle can be used as a temporary storage. The movement of the disks must confirm to the following rules,
+
+1. Only one disk may be moved at a time
+2. A disk can be moved from any needle to any other.
+3. The larger disk should not rest upon a smaller one.

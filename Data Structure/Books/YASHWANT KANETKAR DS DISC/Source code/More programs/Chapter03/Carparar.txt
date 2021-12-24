@@ -1,0 +1,24 @@
+Program Statement:
+
+You are required to model a vehicle parking lot system. The parking lot has a facility to park cars and scooters. The parking lot contains four parking lanes-two for cars and two for scooters.
+
+Each lane can hold ten vehicles. There is an operator with a console at the East end of the parking lot. The system should be able to handle following scenarios.
+
+Arrival of a vehicle:
+
+1.	Type of vehicle (car or scooter) and Registration No. of vehicle should be entered 
+2.	Program should display suitable parking slot
+3.	Vehicles arrive at East end, leave from West end
+
+Departure of Car:
+
+1.	If not western most, all cars should be moved to the west
+2.	When the car is driven out, rest of the cars should be moved to the left
+3.	Vehicle data should be updated
+
+Departure of Scooter:
+
+1.	Scooters should be able to drive out at random
+2.	Vehicle data should be updated
+
+Note that when desired the operator must be able to obtain information like number of vehicles, number of scooters or number of cars currently parked in the parking lot. Also, the system should be able to display all the parking lots (currently occupied) if desired.

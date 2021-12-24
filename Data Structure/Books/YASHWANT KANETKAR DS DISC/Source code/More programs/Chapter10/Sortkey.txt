@@ -1,0 +1,1 @@
+Write a program that accepts a set of 5 records for students. Ask user to enter name, age and height of a student. Sort these records in ascending order of their names. If the names are alike then sort according to their age.

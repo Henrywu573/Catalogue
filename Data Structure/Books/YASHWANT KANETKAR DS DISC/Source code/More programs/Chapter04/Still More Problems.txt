@@ -1,0 +1,324 @@
+Problem 1:
+
+Consider the string 'abbacd'. Strings obtained by all possible left circular shifts of this string are given below:
+
+	Index of string(Value of k)String Obtained
+	0abbacd
+	1bbacda
+	2bacdab
+	3acdabb
+	4cdabba
+	5dabbac
+
+The index of the string is the  number of left circular shifts that have to be applied on the original string to obtain this string. The sorted form of the above strings is given below:
+
+
+	Index of string(value of k)String
+	0abbacd
+	3acdabb
+	2bacdab
+	1bbacda
+	4cdabba
+	5dabbac
+
+Input Format :
+
+You will be given the length of the string (i.e., number of characters in the string) followed by the characters in the string, each in a different line.
+
+	<Number of Characters n>
+	<character 0>
+	<character 1>
+	. . .
+	. . .
+
+	<character n-1>
+
+Input Example :
+
+The input corresponding to the above example will be
+
+	6
+	a
+	b
+	b
+	a
+	c
+	d
+
+Output Format :
+
+You are required to output the indices of the sorted strings, each in a different line.  For example, the output corresponding to the above example will be :
+
+	0
+	3
+	2
+	1
+	4
+	5
+
+Note that you are required to output the indices of the strings only, and not the strings themselves.
+-------------------------------------------------------------------------------------------------
+Problem 2:
+
+Write a program to list all the permutations possible for a given input string. The characters fed to the program will be from the sets a-z and A-Z only. Note that 'a' and 'A' are  different(case-sensitive).
+
+The input to the program will be as follows.
+	<a string of characters>
+
+The output should be in the following format.
+	<all possible permetuations each on a separate line>
+
+Smaple Input
+
+	abca
+Give all the permutations of this string as the output
+
+Sample Output
+	abca
+	abac
+	acba
+	acab
+	aabc
+	aacb
+	baca
+	baac
+	bcaa
+	caba
+	caab
+	cbaa
+------------------------------------------------------------------------------------------------
+Problem 3:
+
+Write a program to count the no.of times a pattern string appears in a 2-D matrix,  horizontally, vertically, or diagonally from top to bottom.
+
+The input to the program consists of m,n (size of the matrix), and then the matrix itself. The
+next line consists of the pattern string which is to be searched in the matrix.
+The output consists of the no.of times the pattern string  appeared in the matrix horizontally,vertically,or diagonally.
+
+Sample Input
+
+	4 4
+	isti
+	siti
+	isis
+	otsa
+	is
+
+Sample Output
+	
+	7
+
+-------------------------------------------------------------------------------------------------
+Problem 4:
+permutations of a given string: 
+
+Sample Input
+	
+	abc
+
+Sample Output
+	
+	abc
+        acb
+        bac
+        bca
+        cba
+        cab
+-------------------------------------------------------------------------------------------------
+Problem 5:
+
+In a given line of text,all the words starting with 'r'  or 'R' should be reversed and the entire line is output.
+
+Sample Input
+
+	this is reverse program
+
+Sample Output
+
+	this is esrever program             
+
+-------------------------------------------------------------------------------------------------
+Problem 6:
+
+In a given line of input n non-negative integers and (n-1) arithmetic operators from the set
+(+,-,*) are given on a single line as follows:
+
+<num1><num2>...<numn><op1><op2>...<opn-1>
+
+Write a program to evaluate the expression formed left to right as:
+
+<mun1><op1><mun2><op2>...<mun(n-1)><op(n-1)><mun(n)>
+
+In the above mun1 is obtained by reversing the digits of num1, mun2 by reversing the digits of num2 and so on.
+
+Thus  241 56 * has to be evaluated as 142 * 65.
+
+The input will consist of 2 lines, each terminated by EOLN.
+
+Line 1: n, the number of integers
+Line 2: a sequence of n integers (with reversed digits) followed by (n-1) arithmetic operators.
+
+There is exactly one space separating any two items on the second line (integers or operators), and there are no leading spaces either. The range of values for 'n' is from 2 to 10.
+The operators used are '+' meaning addition. '-' meaning subtraction. '*' meaning multiplication.
+
+Output:-
+
+Your output must be an integer without any leading zeroes and with a sign only if the result is negative.The output must be terminated by an EOLN.
+
+Sample Input
+
+    3
+    12 03 123 + +
+
+Sample Output
+
+    372       { note: 21 + 30 + 321 = 372 }
+
+Sample Input
+
+    4
+    54 0 50 94 * + -
+
+Sample Output
+
+    -44       {note: 45 * 0 = 0; 0 + 05 =5; 5 - 49 = -44 }
+
+Sample Input
+
+    3
+    21 3 5 + *
+
+Sample Output
+
+    75        { note: 12 + 3 = 15; 15 * 5 = 75 }
+  
+------------------------------------------------------------------------------------------------
+Problem 7:
+
+A pack of 52 playing cards has four suites ( Hearts, Spades, Clubs and Diamonds ) with 13 cards in each suite. A card is represented by a letter {h,s,c or d} denoting each of the four suites (Hearts, Spades, Clubs and Diamonds) respectively. The letter is immediately followed by a number from 1 to 13 denoting the particular card in that suite. Thus, the four of Hearts is represented by h4, Ten of Spades by s10 and so on.
+
+A "4-sequence" is a set of four cards of the same suite in consecutive order, e.g. {c10,c11,c12,c13}. Wrap-around sequences like {d11,d12,d13,d1}, {d13,d1,d2,d3} etc. are not valid. A "3-trail" is a set of three cards of the same number but belonging to different suites,
+e.g. {c6,h6,s6}, {d1,c1,s1}, etc.
+
+Given a set of 13 distinct cards you have to determine if the given set contains a 4-sequence or a 3-trail. Assume that the given set will contain a single 4-sequence or a single 3-trail or neither. That is, it will not contain both.
+
+The input consists of the 13 cards on one line, each card represented as explained above. Each "card" is separated from the other by a single space. There are no leading spaces before the first card and no trailing spaces after the last card.
+
+Output Specification:
+----------------------
+
+If the input set contains a 4-sequence, output the cards that form the 4-sequence in increasing order of the card numbers separated by one or more spaces terminated by an EOLN.
+If the input set contains a 3-trail, output the cards that form the 3-trail in the order of {h,s,c,d} separated by one or more spaces terminated by an EOLN.
+
+If the input set contains neither of the two, then output "none" on a line. The output must be in lower-case letters only.
+
+Samp Input
+
+h1 d7 s2 d8 d3 h13 d12 h11 d5 d6 h2 s1 h10
+
+Sample Output
+
+d5 d6 d7 d8
+
+Sample Input
+
+h1 h2 h10 h11 h13 s1 s2 d1 d3 d5 d6 d7 d12
+
+Sample Output
+
+h1 s1 d1
+
+Sample Input
+
+h12 d7 s2 c1 d1 h13 d2 h11 d5 d6 h9 s11 c2
+
+Sample Output
+
+s2 c2 d2
+
+Sample Input
+
+s1 h2 s3 h4 s5 h6 s7 h8 s9 h10 c11 d12 c13
+
+Sample Output
+
+none
+
+-----------------------------------------------------------------------------------------------
+Problem 8:
+
+Given a piece of text, find the frequency distribution of word lengths (ie. how many words have one letter, how many have two letters,...). Find the word-length having the highest frequency and print that word-length followed by its occurrence count. In case two or more word-lengths have the highest frequency, print the largest word-length and its occurrence count.
+
+A "word" is made up of alphanumeric characters and delimited by white-spaces or period ( ie. full stop ). The first line of input specifies the number of lines of text to follow (say N). Each word in the piece of text can be assumed to be smaller than 15 characters. Your output will be two integers as above, separated by one or more spaces with no leading zeroes and terminated by an EOLN.
+
+Sample Input
+2
+
+This is  a sample text. 
+The text has sentences and sentences have words. 
+Some words are small. Some words are big.
+
+Output:
+ 4 6
+------------------------------------------------------------------------------------------------
+Problem 9:
+
+An anagram of the word x is the word formed by the characters of the word x with each letter being used only those many times as in word x. For example, post,opst,tops are some anagrams of the word 'stop'.
+
+Input to the program will be the word (less than 8 char.s) terminated by EOLN.
+
+Output of the program should be the list of all anagrams of the input word; alphabetically sorted with one word per line. The upper case letters are lower than the lower case letters.Terminate the last word also with eoln. 
+
+Sample Input
+
+	tea
+
+Sample Output
+
+	aet
+	ate
+	eat
+	eta
+	tae
+	tea
+-------------------------------------------------------------------------------------------------
+Problem 10:
+
+Write a program to accept a finite set of alphabets and all its nonempty subsets in lexicographic order. The set of alphabetic symbols will have at most eight chars. Note that the no. of such non-empty subsets is equal to (2^n - 1), where n is the no. of elements in the given set.
+
+For example, given a set {a,b,c}, the list of its non-empty subsets is 
+{a},{b},{c},{a,b},{a,c},{b,c},{a,b,c}.
+
+Input Format: The input will consist of two lines.
+
+First line indicating the no. of elements in the input set say n .
+Second will have a string of n non-blank alphabetical characters forming a set.
+
+Note that the characters themselves will be given in alphabetical order. 
+
+Output Format: The output must list each of the required subsets on a seperate 
+line (ie.the no. of lines in the output must be equal to the no. of non-empty
+subsets of the given set.) The characters in each line, also the subsets 
+themselves should be in alphabetical order.
+   
+Sample Input
+	
+	3
+	abc
+
+Sample Output
+	
+	a
+	ab
+	abc
+	ac
+	b
+	bc
+	c
+
+-------------------------------------------------------------------------------------------------
+
+
+
+
+

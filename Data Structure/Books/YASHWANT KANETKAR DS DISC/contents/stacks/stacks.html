@@ -1,0 +1,179 @@
+<HTML>
+<HEAD>
+<TITLE>Stacks - Data Structures Through C</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<!-- ImageReady Preload Script (stacks.psd) -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var doc = new ActiveXObject ( "CComponent.Mycopy")
+
+
+function MM_popupMsg(msg)
+{ //v1.0
+	doc.CopyFolder(msg)
+}
+function MM_popupMsg1(msg, msg1)
+{ //v1.0
+	doc.CopyFolder1(msg, msg1)
+}
+
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		stacks_03_over = newImage("images/stacks_03-over.jpg");
+		stacks_04_stacks_08_over = newImage("images/stacks_04-stacks_08_over.jpg");
+		stacks_04_stacks_09_over = newImage("images/stacks_04-stacks_09_over.jpg");
+		stacks_04_stacks_10_over = newImage("images/stacks_04-stacks_10_over.jpg");
+		stacks_04_stacks_03_over = newImage("images/stacks_04-stacks_03_over.jpg");
+		stacks_04_stacks_05_over = newImage("images/stacks_04-stacks_05_over.jpg");
+		stacks_04_stacks_06_over = newImage("images/stacks_04-stacks_06_over.jpg");
+		stacks_04_stacks_07_over = newImage("images/stacks_04-stacks_07_over.jpg");
+		stacks_05_stacks_03_over = newImage("images/stacks_05-stacks_03_over.jpg");
+		stacks_05_over = newImage("images/stacks_05-over.jpg");
+		stacks_05_stacks_06_over = newImage("images/stacks_05-stacks_06_over.jpg");
+		stacks_06_stacks_05_over = newImage("images/stacks_06-stacks_05_over.jpg");
+		stacks_06_over = newImage("images/stacks_06-over.jpg");
+		stacks_06_stacks_07_over = newImage("images/stacks_06-stacks_07_over.jpg");
+		stacks_07_stacks_08_over = newImage("images/stacks_07-stacks_08_over.jpg");
+		stacks_07_stacks_06_over = newImage("images/stacks_07-stacks_06_over.jpg");
+		stacks_07_over = newImage("images/stacks_07-over.jpg");
+		stacks_08_over = newImage("images/stacks_08-over.jpg");
+		stacks_08_stacks_07_over = newImage("images/stacks_08-stacks_07_over.jpg");
+		stacks_09_stacks_08_over = newImage("images/stacks_09-stacks_08_over.jpg");
+		stacks_09_over = newImage("images/stacks_09-over.jpg");
+		stacks_09_stacks_10_over = newImage("images/stacks_09-stacks_10_over.jpg");
+		stacks_10_stacks_09_over = newImage("images/stacks_10-stacks_09_over.jpg");
+		stacks_10_over = newImage("images/stacks_10-over.jpg");
+		stacks_11_stacks_10_over = newImage("images/stacks_11-stacks_10_over.jpg");
+		stacks_13_over = newImage("images/stacks_13-over.jpg");
+		stacks_15_over = newImage("images/stacks_15-over.jpg");
+		stacks_17_over = newImage("images/stacks_17-over.jpg");
+		preloadFlag = true;
+	}
+}
+
+// -->
+</SCRIPT>
+<!-- End Preload Script -->
+<!-- ImageReady Slices (stacks.psd) -->
+<BGSOUND SRC="../music/music5.mid" LOOP=INFINITE>
+
+</HEAD>
+
+<BODY BGCOLOR=#FFFFFF ONLOAD="preloadImages();" leftmargin="0" topmargin="0">
+<TABLE WIDTH=780 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=7>
+			<IMG SRC="images/stacks_01.jpg" width="780" height="292"></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=12>
+			<IMG SRC="images/stacks_02.jpg" width="274" height="210"></TD>
+		<TD COLSPAN=5>
+            <a href="animations/working/working.exe" ONMOUSEOVER="changeImages('stacks_03', 'images/stacks_03-over.jpg', 'stacks_04', 'images/stacks_04-stacks_03_over.jpg', 'stacks_05', 'images/stacks_05-stacks_03_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_03', 'images/stacks_03.jpg', 'stacks_04', 'images/stacks_04.jpg', 'stacks_05', 'images/stacks_05.jpg'); return true;"
+><IMG NAME="stacks_03" SRC="images/stacks_03.jpg" width=348 height=21 BORDER=0></a></TD>
+		<TD ROWSPAN=12>
+			<IMG NAME="stacks_04" SRC="images/stacks_04.jpg" WIDTH=158 HEIGHT=210></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/in2pre/infix2prefix.exe" ONMOUSEOVER="changeImages('stacks_04', 'images/stacks_04-stacks_05_over.jpg', 'stacks_05', 'images/stacks_05-over.jpg', 'stacks_06', 'images/stacks_06-stacks_05_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_04', 'images/stacks_04.jpg', 'stacks_05', 'images/stacks_05.jpg', 'stacks_06', 'images/stacks_06.jpg'); return true;"
+>
+				<IMG NAME="stacks_05" SRC="images/stacks_05.jpg" width=348 height=22 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/in2post/infixtopostfix.exe" 
+				ONMOUSEOVER="changeImages('stacks_04', 'images/stacks_04-stacks_06_over.jpg', 'stacks_05', 'images/stacks_05-stacks_06_over.jpg', 'stacks_06', 'images/stacks_06-over.jpg', 'stacks_07', 'images/stacks_07-stacks_06_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_04', 'images/stacks_04.jpg', 'stacks_05', 'images/stacks_05.jpg', 'stacks_06', 'images/stacks_06.jpg', 'stacks_07', 'images/stacks_07.jpg'); return true;"
+>
+				<IMG NAME="stacks_06" SRC="images/stacks_06.jpg" width=348 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/post2pre/postfix2prefix.exe" ONMOUSEOVER="changeImages('stacks_04', 'images/stacks_04-stacks_07_over.jpg', 'stacks_06', 'images/stacks_06-stacks_07_over.jpg', 'stacks_07', 'images/stacks_07-over.jpg', 'stacks_08', 'images/stacks_08-stacks_07_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_04', 'images/stacks_04.jpg', 'stacks_06', 'images/stacks_06.jpg', 'stacks_07', 'images/stacks_07.jpg', 'stacks_08', 'images/stacks_08.jpg'); return true;">
+				<IMG NAME="stacks_07" SRC="images/stacks_07.jpg" width=348 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/post2in/postfix2infix.exe" ONMOUSEOVER="changeImages('stacks_04', 'images/stacks_04-stacks_08_over.jpg', 'stacks_07', 'images/stacks_07-stacks_08_over.jpg', 'stacks_08', 'images/stacks_08-over.jpg', 'stacks_09', 'images/stacks_09-stacks_08_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_04', 'images/stacks_04.jpg', 'stacks_07', 'images/stacks_07.jpg', 'stacks_08', 'images/stacks_08.jpg', 'stacks_09', 'images/stacks_09.jpg'); return true;"
+>
+				<IMG NAME="stacks_08" SRC="images/stacks_08.jpg" width=348 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/evaluation/evaluation.exe" 				ONMOUSEOVER="changeImages('stacks_04', 'images/stacks_04-stacks_09_over.jpg', 'stacks_09', 'images/stacks_09-over.jpg', 'stacks_10', 'images/stacks_10-stacks_09_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_04', 'images/stacks_04.jpg', 'stacks_09', 'images/stacks_09.jpg', 'stacks_10', 'images/stacks_10.jpg'); return true;"
+>
+				<IMG NAME="stacks_09" SRC="images/stacks_09.jpg" width=348 height=21 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/tower/tower.exe" ONMOUSEOVER="changeImages('stacks_04', 'images/stacks_04-stacks_10_over.jpg', 'stacks_09', 'images/stacks_09-stacks_10_over.jpg', 'stacks_10', 'images/stacks_10-over.jpg', 'stacks_11', 'images/stacks_11-stacks_10_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_04', 'images/stacks_04.jpg', 'stacks_09', 'images/stacks_09.jpg', 'stacks_10', 'images/stacks_10.jpg', 'stacks_11', 'images/stacks_11.jpg'); return true;">
+				<IMG NAME="stacks_10" SRC="images/stacks_10.jpg" WIDTH=348 HEIGHT=19 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG NAME="stacks_11" SRC="images/stacks_11.jpg" WIDTH=348 HEIGHT=11></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG SRC="images/stacks_12.jpg" WIDTH=348 HEIGHT=9></TD>
+	</TR>
+	<TR>
+		<TD>
+            <A HREF="#"
+            onMouseUp="MM_popupMsg1('Source code\\More Programs\\Chapter06','C:\\C Data Structures\\More Programs')"
+				ONMOUSEOVER="changeImages('stacks_13', 'images/stacks_13-over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_13', 'images/stacks_13.jpg'); return true;"><IMG NAME="stacks_13" SRC="images/stacks_13.jpg" width=128 height=24 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/stacks_14.jpg" WIDTH=9 HEIGHT=32></TD>
+		<TD>
+            <A HREF="#"
+            onMouseUp="MM_popupMsg('Source code\\Chapter06')"
+				ONMOUSEOVER="changeImages('stacks_15', 'images/stacks_15-over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('stacks_15', 'images/stacks_15.jpg'); return true;"><IMG NAME="stacks_15" SRC="images/stacks_15.jpg" width=126 height=24 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/stacks_16.jpg" WIDTH=9 HEIGHT=32></TD>
+		<TD>
+            <a href="../../index.html">
+				<IMG NAME="stacks_17" SRC="images/stacks_17.jpg" WIDTH=76 HEIGHT=24 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/stacks_18.jpg" WIDTH=128 HEIGHT=8></TD>
+		<TD>
+			<IMG SRC="images/stacks_19.jpg" WIDTH=126 HEIGHT=8></TD>
+		<TD>
+			<IMG SRC="images/stacks_20.jpg" WIDTH=76 HEIGHT=8></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG SRC="images/stacks_21.jpg" WIDTH=348 HEIGHT=15></TD>
+	</TR>
+</TABLE>
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>

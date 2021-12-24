@@ -1,0 +1,91 @@
+/* REVERSING A LINKED LIST */
+/* LINK_REV.C */
+
+# include <stdio.h>
+# include <malloc.h>
+
+struct link_list
+{
+	int info;
+	struct link_list *next;
+};
+typedef struct link_list node;
+int num;
+node *start;
+
+
+void create(node *);
+void display(node *);
+void reverse(node *);
+
+/* Function main */
+
+void main()
+{
+	start = (node *) malloc(sizeof(node));
+	create(start);
+	printf("\n created list is as follows:");
+	display(start);
+	reverse(start);
+	printf("\n reverse list is as follows:");
+	display(start);
+	getch();
+}
+/* Function create a linked list */
+void create(node *ptr)
+{
+	char ch;
+	clrscr();
+	num = 0;
+	printf("\n Enter E for Exit any other key for continue: ");
+	ch = getchar();
+	if(ch=='e')
+	{
+	free(ptr);
+	exit(0);
+	}
+	do
+	{
+		printf("\n Input the values of the node : %d: ", (num+1));
+		scanf("%d", &ptr->info);
+		fflush(stdin);
+		printf("\n want to continue(y/n)->: ");
+		ch = getchar();
+		if(ch=='y')
+		{
+		ptr->next = (node *) malloc(sizeof(node));
+		ptr = ptr->next;
+		}
+		num ++;
+	}while(ch=='y');
+	ptr->next=NULL;
+	printf("\n Total nodes = %d", num);
+}
+
+/* function display */
+void display(node *ptr)
+{
+	while (ptr!=NULL)
+	{
+		printf("\n %d",  ptr->info);
+		ptr = ptr->next;
+	}
+}
+
+
+/* Reversing the list */
+
+void  reverse(node *ptr)
+{
+	node *curr,*prev =NULL;
+	curr=ptr->next;
+	while( curr != NULL )
+	{
+		ptr->next=prev;
+		prev=ptr;
+		ptr=curr;
+		curr=curr->next;
+	 }
+		ptr->next=prev;
+	start=ptr;
+}

@@ -1,0 +1,10 @@
+Write a program that checks if given set of strings form an acrostic. The set of strings is said to form an acrostic when
+the strings read in any direction come in same order. For example,
+
+ROTAS
+OPERA
+TENET
+AREPO
+SATOR
+
+the above strings if read horizonatally from left to right and right to left, or vertically from top to bottom and from bottom to top come in same order.

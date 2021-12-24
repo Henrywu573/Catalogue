@@ -1,0 +1,245 @@
+Problem 1:
+
+Construct a binary search tree based on a set of keys given as input. The criteria to be met by each node is:
+
+     info(left(node)) < info(node) <=  info(right(node)).
+
+After the tree is constructed,  you  have to rotate the tree to right or left by one step and then print out the pre-order traversal of the tree.
+
+The input will consist of a number N (< 50) followed by a sequence of N integers, all in one line. These N numbers will be the keys to construct the tree. After this there will be a single  word (either left or right) on a separate line. This is the instruction as to which  way  the
+tree is to be rotated.
+
+The output from the program will be the  pre-order traver-sal of the resulting tree. All keys are to be printed in a single line, separated by spaces.
+
+If the desired rotation cannot be performed, ignore the command and do pre-order traversal of  the tree con-structed from the input.
+
+Sample Input
+
+	6 1 2 4 3 5 6
+	left
+
+Sample Output
+
+	2 1 4 3 5 6
+
+Sample Input
+	
+	4 4 3 5 6
+	right
+
+Sample Output
+
+	3 4 5 6
+
+-------------------------------------------------------------------------------------------------
+Problem 2:
+
+In this problem, you are given the probabilities of occurrence of a sequence of tokens. You are required to con-struct a suitable encoding of the input token to efficiently represent these tokens while storing. In this problem, each token will be represented by only one character. The
+detailed algorithm is given below.
+
+Construct a binary tree using the probability sequence, as follows.
+
+For example, consider the tokens: A, B, C, D, E and  F,  and the respective probabilities of occurrence: 40, 30, 10, 10, 6, and 4. We represent probabilities as an integer in the range 0 to 100.
+
+Represent these as single tree-nodes consisting of the token-name  and the probability. It is useful to store these nodes in an array as shown in the figure.
+
+Scan the array and find the lowest two probabilities.  These will be E and F, at positions 4 and 5 (assuming A is at zero).
+
+Combine these nodes into a binary tree, by  creating a new parent  node  and  marking  these nodes as its children. The node with smaller array index, will form  the  left  subtree
+and the other will be the right subtree.
+
+      Array:    0      1      2      3        4         5
+                |      |      |      |       / \        |
+                |      |      |      |      /   \       |
+                A      B      C      D     E     F     NULL
+
+Replace the array entry which has smaller array index with the new parent of this subtree and delete the other entry (mark it with NULL). 
+
+Now the array will contain:  40,  30, 10,  10 and 10.
+
+Repeating the above process once more, we get to combine two of the 10 nodes. In case of a tie, we choose the first in the array. Thus we will combine nodes C and D to create another subtree. This resulting tree will replace the node C and the node D will be marked as NULL.
+
+      Array:    0      1       2       3         4         5
+                |      |      / \      |        / \        |
+                |      |     /   \     |       /   \       |
+                A      B    C     D   NULL    E     F     NULL
+
+Repeat the process, till the array has only one element remaining. The final tree is as follows:
+
+      Array:    0      1       2       3       4       5
+               /\      |       |       |       |       |
+              /  \     |       |       |       |       |
+             /    \   NULL    NULL    NULL    NULL    NULL
+            A     /\
+                 /  \
+                /    \
+               B    /  \
+                   /    \
+                  /      \
+                 /\      /\
+                /  \    /  \
+               /    \  /    \
+              C     D  E    F
+
+Input specification
+
+The input consists of one line giving the number of tokens N(< 100), followed by N lines each containing a token name and a probability.
+
+Output specification
+
+Traverse the tree and print out the depth of each leaf node, left-to-right. 
+
+
+Some part of the code for solving this problem will be given to you in the grader. This is also reproduced below for your information in planning the rest of the code.
+
+The code given to you implements the output part of the solution, ie. printing the depths of the leaf nodes from left to right. This code should not be changed, and should be included in your program file as "prob1.h".  Please note that the tree-node structure is also defined in this  file. You must use this same structure.
+
+Sample Input
+
+
+      6
+      A  40
+      B  30
+      C  10
+      D  10
+      E  6
+      F  4
+
+Sample Output
+
+      1 2 4 4 4 4
+
+-------------------------------------------------------------------------------------------------
+Problem 3:
+
+Multi-way Search tree
+
+Write a program to construct a multi-way search tree of order 5 using a set of numbers as input. The ordering to be used is descending order. The basic approach to insertion of a key (say,
+ k) is similar to construction of binary search trees.
+
+For each node (from the root onwards) if the node has space, insert the key there at a suitable place, else find a position i such that, key k(i-1) > k and ki < k. Then continue the search with the ith subtree. If the subtree is empty, create node structure there.
+
+The input will consist of a number N (> 0) followed by N numbers. The different numbers will be on separate lines. The program must, for each number read-in, print out the number of nodes (not
+ keys!) in the tree after insertion of the number into the tree. You can assume that there will be no duplicate numbers in the input. All output must be on one line.
+
+Sample Input
+
+	10
+	1001
+	231
+	134	
+	2356
+	347
+	455
+	678
+	745
+	1010
+	444
+
+Sample Output
+
+1 1 1 1 2 2 2 2 3 4 
+-------------------------------------------------------------------------------------------------
+Problem 4:
+
+Line segments problem:
+
+Given a set of horizontal and vertical line segments (coordinates given), find the points of intersection of these lines.
+
+* Given a tree's root node, make an exact copy of the tree and return the new root.
+* Given a tree's root node, build a mirror image of it and return the new root.
+* Given a  forest of trees, construct a single equivalent binary tree from them.Eg.:
+
+Sample Input
+
+	1 A
+	2 B
+	2 C
+	2 D
+	3 E
+	1 F
+	2 G
+	3 I
+	3 J
+	2 H
+
+The numbers correspond to the level of the node.
+
+                  A                   F
+              / | \            / \
+             B  C  D          G   H
+                   |         / \
+                     E        I   J 
+
+Preorder : A B C D E F G I J H
+
+Output Tree:
+        
+                          A
+                      /   \
+                     /     \
+                    B       F
+                    \       /
+                     C     G
+                      \   / \
+                       D I   H 
+                      /   \
+                     E     J
+
+Inorder : B C E D A I J G H F
+-------------------------------------------------------------------------------------------------
+Problem 5:
+
+Construct a tree with the given input and evaluate the arithmetic expression. The leaf nodes of the trees are numbers whereas the other nodes are operators.
+
+eg:
+                *
+              /   \
+             +     - 
+            / \   / \
+           2   3 4   5
+
+This is equivalent to (2+3) * (4-5) =  -5 (Output)
+-------------------------------------------------------------------------------------------------
+Problem 6:
+
+The input to your program will be a string of letters which symbolize the nodes of a binary tree[refer Notes]. The order of appearance of the letters is the pre-order traversal[refer Notes] of the tree. A 0(zero) in the string specifies that the relevant child is null. Your program should then accept two letters as input and give as output the path from the first to the second.
+
+The input to the program will be as follows.
+	<string representing the tree >
+        <string of exactly two letters representing the two nodes>
+
+The output should be in the following format.
+        <String representing the path from first node  to second node>
+
+The input to your program will be of the form:
+
+ABDF000E00C0G00
+DG
+
+the sample tree for this example string is as below..  
+                 A
+               /    \
+             B       C
+            / \      /  \
+          D     E  0     G
+         /  \  / \       / \
+        F    0 0  0     0   0
+       / \
+      0    0
+
+the output for this problem should be:
+DBACG
+
+Notes:
+
+1) Tree: A tree is a data structure in which there is one root node(e.g. A in the above example) and from each node sprout one or more branches(e.g. AB, AC) leading to one or more nodes(B & C).
+All the nodes in the tree except the root node can be null(e.g. F has two null children). A null node cannot have  children.
+
+2) Binary tree : A tree in which each node has only two children. 
+3) Pre-order Traversal : Here the tree is traversed such that the left
+child of a node and its progeny is completely traversed before traversing the children of its right node. e.g. After specifying the children of A i.e. B & C we go on to specify the
+children of B(the left child) before we specify the children of C(right
+node).
+------------------------------------------------------------------------------------------------
+ 

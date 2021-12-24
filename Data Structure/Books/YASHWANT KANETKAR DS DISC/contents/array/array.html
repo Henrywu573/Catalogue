@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>Arrays - Data Structure Through C</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<!-- ImageReady Preload Script (array.psd) -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var doc = new ActiveXObject ( "CComponent.Mycopy")
+
+
+function MM_popupMsg(msg)
+{ //v1.0
+	doc.CopyFolder(msg)
+}
+function MM_popupMsg1(msg, msg1)
+{ //v1.0
+	doc.CopyFolder1(msg, msg1)
+}
+
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		array_01_array_03_over = newImage("images/array_01-array_03_over.jpg");
+		array_02_array_03_over = newImage("images/array_02-array_03_over.jpg");
+		array_02_array_05_over = newImage("images/array_02-array_05_over.jpg");
+		array_02_array_06_over = newImage("images/array_02-array_06_over.jpg");
+		array_03_over = newImage("images/array_03-over.jpg");
+		array_03_array_05_over = newImage("images/array_03-array_05_over.jpg");
+		array_04_array_03_over = newImage("images/array_04-array_03_over.jpg");
+		array_04_array_05_over = newImage("images/array_04-array_05_over.jpg");
+		array_04_array_06_over = newImage("images/array_04-array_06_over.jpg");
+		array_05_over = newImage("images/array_05-over.jpg");
+		array_06_array_05_over = newImage("images/array_06-array_05_over.jpg");
+		array_06_over = newImage("images/array_06-over.jpg");
+		array_07_array_06_over = newImage("images/array_07-array_06_over.jpg");
+		array_09_over = newImage("images/array_09-over.jpg");
+		array_10_over = newImage("images/array_10-over.jpg");
+		array_12_over = newImage("images/array_12-over.jpg");
+		preloadFlag = true;
+	}
+}
+
+// -->
+</SCRIPT>
+<!-- End Preload Script -->
+<!-- ImageReady Slices (array.psd) -->
+<BGSOUND SRC="../music/music2.mid" LOOP=INFINITE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF ONLOAD="preloadImages();" leftmargin="0" topmargin="0">
+<TABLE WIDTH=780 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=7>
+			<IMG NAME="array_01" SRC="images/array_01.jpg" WIDTH=780 HEIGHT=287></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=8>
+			<IMG NAME="array_02" SRC="images/array_02.jpg" WIDTH=276 HEIGHT=157></TD>
+		<TD COLSPAN=5>
+            <a href="animations/working/working.exe" ONMOUSEOVER="changeImages('array_01', 'images/array_01-array_03_over.jpg', 'array_02', 'images/array_02-array_03_over.jpg', 'array_03', 'images/array_03-over.jpg', 'array_04', 'images/array_04-array_03_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('array_01', 'images/array_01.jpg', 'array_02', 'images/array_02.jpg', 'array_03', 'images/array_03.jpg', 'array_04', 'images/array_04.jpg'); return true;"
+><IMG NAME="array_03" SRC="images/array_03.jpg" width=350 height=22 BORDER=0></a></TD>
+		<TD ROWSPAN=8>
+			<IMG NAME="array_04" SRC="images/array_04.jpg" WIDTH=154 HEIGHT=157></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/merging/merge.exe" ONMOUSEOVER="changeImages('array_02', 'images/array_02-array_05_over.jpg', 'array_03', 'images/array_03-array_05_over.jpg', 'array_04', 'images/array_04-array_05_over.jpg', 'array_05', 'images/array_05-over.jpg', 'array_06', 'images/array_06-array_05_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('array_02', 'images/array_02.jpg', 'array_03', 'images/array_03.jpg', 'array_04', 'images/array_04.jpg', 'array_05', 'images/array_05.jpg', 'array_06', 'images/array_06.jpg'); return true;">
+				<IMG NAME="array_05" SRC="images/array_05.jpg" WIDTH=350 HEIGHT=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/lift/lift.exe" ONMOUSEOVER="changeImages('array_02', 'images/array_02-array_06_over.jpg', 'array_04', 'images/array_04-array_06_over.jpg', 'array_06', 'images/array_06-over.jpg', 'array_07', 'images/array_07-array_06_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('array_02', 'images/array_02.jpg', 'array_04', 'images/array_04.jpg', 'array_06', 'images/array_06.jpg', 'array_07', 'images/array_07.jpg'); return true;">
+				<IMG NAME="array_06" SRC="images/array_06.jpg" WIDTH=350 HEIGHT=23 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG NAME="array_07" SRC="images/array_07.jpg" WIDTH=350 HEIGHT=6></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=4>
+			<IMG SRC="images/array_08.jpg" WIDTH=272 HEIGHT=4></TD>
+		<TD ROWSPAN=2>
+            <a href="../../index.html">
+				<IMG NAME="array_09" SRC="images/array_09.jpg" WIDTH=78 HEIGHT=27 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD>
+            <A HREF="#"
+				ONMOUSEOVER="changeImages('array_10', 'images/array_10-over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('array_10', 'images/array_10.jpg'); return true;"
+				onMouseUp="MM_popupMsg1('Source code\\More Programs\\Chapter02','C:\\C Data Structures\\More Programs')"
+				><IMG NAME="array_10" SRC="images/array_10.jpg" WIDTH=131 HEIGHT=23 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/array_11.jpg" WIDTH=5 HEIGHT=35></TD>
+		<TD>
+            <A HREF="#"
+				ONMOUSEOVER="changeImages('array_12', 'images/array_12-over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('array_12', 'images/array_12.jpg'); return true;"
+				onMouseUp="MM_popupMsg('Source code\\Chapter02')"
+				><IMG NAME="array_12" SRC="images/array_12.jpg" WIDTH=129 HEIGHT=23 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/array_13.jpg" WIDTH=7 HEIGHT=35></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/array_14.jpg" WIDTH=131 HEIGHT=12></TD>
+		<TD>
+			<IMG SRC="images/array_15.jpg" WIDTH=129 HEIGHT=12></TD>
+		<TD>
+			<IMG SRC="images/array_16.jpg" WIDTH=78 HEIGHT=12></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG SRC="images/array_17.jpg" WIDTH=350 HEIGHT=47></TD>
+	</TR>
+</TABLE>
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>

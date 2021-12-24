@@ -1,0 +1,1 @@
+In an input restricted deque the insertion of elements is at one end only, but the deletion of elements can be done at both the ends of a queue. Write a program that demonstrates an input-restricted dque.

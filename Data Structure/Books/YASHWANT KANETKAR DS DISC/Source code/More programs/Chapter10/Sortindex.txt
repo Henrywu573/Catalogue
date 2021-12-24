@@ -1,0 +1,1 @@
+Write a program that asks user an ID, name, age and salary of 5 employees. Store all the ID's into one array and sort the array in asscending order. Now to display the records in asscending order search for each elements from the array into records and display the corresponding records.

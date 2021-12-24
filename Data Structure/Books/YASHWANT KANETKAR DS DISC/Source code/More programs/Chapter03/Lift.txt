@@ -1,0 +1,28 @@
+A program that demonstrates how an array can be used to show working of lifts in a multi-storeyed building.
+
+A 30- storeyed building has got about 5 wings where there would be a lift in each of the wing. You have to make available a lift to the person who presses a button to get a lift. Follow the steps given below for designing the program.
+
+1. The floors of the building should be numbered as 0 - 29.
+2. The lifts should be numbered as 0 - 4.
+3. Display a menu that would have following options
+	a. Do you wish to use a lift?
+	b. Show lift status
+	c. Exit
+If user selects, option 1 then get following information from the user.
+
+-Get the floor number where the person is standing
+-Whether user wishes to go up/down.
+-Get the floor number where the user wishes to go. 
+
+The validation checks should be there for the data that user enters. 
+The validation checks are as given below.
+1. The floor number where the user is standing and the floor number where user wishes to go should be in a range of 0 to 29.
+2. If the user is standing on ground floor, i.e. 0th floor, then selecting the direction for the lift to go down would be invalid.
+3. If the user is standing on topmost floor, i.e. 29th floor, then selecting the direction for the lift to go up would be invalid.
+4. The direction for the lift whether up or down should be entered as 'u' or 'd' only.
+
+Check for the lift that can be made available to the person. Before making a lift available to the user consider the following.
+
+1. The lift, which is nearer to the user, i.e., the floor where he is standing should be made available.
+2. If the user is standing on a floor, say 8th floor for example. And there are two lifts one on the 7th floor and the other on the 9th floor. Both the lifts are nearer to the user. In such a situation, first check where the user wishes to go, up/down? If up then the lift on the 7th floor should be made available. And if down then the lift on 9th floor should be made available.
+2. If the user is standing on say 4th floor for example. And there are 3 lifts, lift number 0, 2, and 4, standing on the 0th floor. All the three are nearer to the user. In such a situation lift that comes first in the order should be made available.

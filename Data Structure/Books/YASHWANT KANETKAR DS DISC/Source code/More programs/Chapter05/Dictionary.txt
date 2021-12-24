@@ -1,0 +1,18 @@
+Problem Statement 
+
+Write a program to simulate a dictionary using linked list. It should be a menu driven program with the options for adding a word and its meanings, searching a word and displaying the dictionary. Steps to develop the program are as given below:
+
+1. Declare a structure with the fields as 
+	- a word, 
+	- meaning of a word
+	- counter that holds the number of meanings
+	- link to the next node. 
+
+Each word added to the list can have maximum 5 meaning(s). Hence, variable used to store meaning(s) of a word would be a two dimensional character array.
+
+2. The program should have following menu.
+
+	- Add a word
+	- Search for a word
+	- Show dictionary
+	- Exit

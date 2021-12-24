@@ -1,0 +1,71 @@
+FAT:
+
+Exploring The Disk
+By far the most widely used storage mediums are the floppy disks and the fixed disks (hard disks). Floppy disks and hard disks come in various sizes and capacities but they all work basically in the same way - information is magnetically encoded on their surface in patterns. These patterns are determined by the disk drive and the software that controls the drive.
+Although the type of storage device is important, it is the way the stored information is laid out and managed that concerns programmers most. Therefore we would focus our attention on how information is organized and stored on the disk.
+
+The Disk Structure
+
+As most of us know, the disk drives in DOS and Windows are organized as zero-based drives. That is, drive A is drive number 0, drive B is drive number 1, drive C is drive number 2, etc. The hard disk drive can be further partitioned into logical partitions. Each drive consists of four logical parts-Boot Sector, File Allocation Table (FAT), Directory and Data space. Of these, the Boot Sector contains information about how the disk is organized. That is, how many sides does it contain, how many tracks are there on each side, how many sectors are there per track, how many bytes are there per sector, etc. The files and the directories are stored in the Data Space. The Directory contains information about the files like its attributes, name, size, etc. The FAT contains information about where the files and directories are stored in the data space.
+
+When a file/directory is created on the disk, instead of allocating a sector for it, a group of sectors is allocated. This group of sectors is often known as a cluster. How many sectors together form one cluster depends upon the capacity of the disk. As the capacity goes on increasing, so also does the maximum cluster number. Accordingly, we have 12-bit, 16-bit or 32-bit FAT. In a 12-bit FAT each entry is of 12 bits. Since each entry in FAT represents a cluster number, the maximum cluster number possible in a 12-bit FAT is 212 (4096). Similarly, in case of a 16-bit FAT the maximum cluster number is 216 (65536). Also, for a 32-bit FAT the maximum cluster number is 228 (268435456. Only 28 of the 32 bits are used in this FAT). All FAT systems are not supported by all versions of Windows. For example, the 32-bit FAT system is supported only in Win 95 OSR2 version or later. There are differences in the organization of contents of Boot Sector, FAT and Directory in FAT12/ FAT16 system on one hand and FAT32 on the other.
+
+The File Allocation Table
+The File Allocation Table (FAT) maps the usage of the data space of the disk. It contains information about the space used by each individual file, the unused disk space and the space that is unusable due to defects in the disk. Since FAT contains vital information, two copies of FAT are usually stored on the disk. In case one gets destroyed, the other can be used. A typical FAT entry can contain any of the following:
+
+-	Unused cluster
+-	Reserved cluster
+-	Bad cluster
+-	Last cluster in the file 
+-	Next cluster number in the file
+
+There is one entry in the FAT for each cluster in the file area. If the value in a FAT entry doesn't mark an unused, reserved or defective cluster, then the cluster corresponding to the FAT entry is part of a file, and the value in the FAT entry would indicate the next cluster in the file.
+This means that the space that belongs to a given file is mapped by a chain of FAT entries. Each FAT entry points to the next entry in the chain. The first cluster number in the chain is the starting cluster number in the file's directory entry. When a file is created or extended, a cluster is allocated to the file by searching the FAT for unused clusters and adding them to the chain. Vice versa, when a file is deleted, the cluster that has been allocated to the file is freed by clearing corresponding FAT entries (by setting them to 0). The FAT chain for a file ends with an entry FFFFh in the FAT. 
+
+This file occupies cluster number 3, 5, 6 and 8 on the disk. Hence the starting cluster number in the directory entry for the file is 3. Suppose this file is to be loaded into memory then OS would first load starting cluster number-3's contents into memory. To find out the next cluster belonging to this file OS looks at entry number 3 in FAT where it finds a value 5. Therefore, now it loads the contents of cluster number 5 into memory. Once again OS looks at the FAT and finds in entry number 5 a value 6, hence it loads the contents of cluster 6 into memory. This process goes on till the OS finds an entry FFFFh in FAT, which indicates that there are no more clusters belonging to the file. Hence the process stops.
+
+Now that we have understood how the FAT chain is traversed, let's dig a little deeper into the FAT. The entries present in FAT are 12, 16 or 32 bits long depending on the storage capacity of the disk. Though a 12-bit FAT can handle 4096 clusters only 4078 clusters are available for use since some values are reserved. Similarly, for a 16-bit FAT out of the possible 65536 clusters that it can handle only 65518 are available for use.
+
+In a 12-bit FAT three bytes form two entries. The first two entries (0 and 1) in the FAT are reserved for use by the OS. This means that first 3 bytes in a 12-bit FAT, first 4 bytes in 16-bit FAT and first 8 bytes in a 32-bit FAT are not used for storing cluster numbers. Out of these 3 (or 4, or 8) bytes, the first byte is the media descriptor byte and the balance contains the value FFh. These balance bytes remain unused. The media descriptor byte specifies the type of the disk. It typically has a value FDh, F9h, F0h, F8h for a 360 KB, 1.2 MB, 1.44 MB and a hard disk respectively. The contents of a FAT entry are interpreted as shown below.
+
+------------------------------------------------------------------------------------
+Values   					| Meaning	                   |		
+------------------------------------------------------------------------------------
+12-bit   |    16-bit	|	32-bit	        |		                   |
+000h     |    0000h	|       0000000h	| Cluster available                |
+FF0h-F6h | FFFFh-FFFF6h	|    FFFFFFFh-FFFFFF6h	| Reserved cluster                 | 
+FF7h	 | FFF7h	|    FFFFFF7h	        | Bad cluster if not part of chain |
+FF8h-FFh | FFF8h-FFFFh	|    FFFFFF8h-FFFFFFh	| Last cluster of file             |
+xxx	 | xxxx	        |    xxxxxxx	        | Next cluster in file             |
+------------------------------------------------------------------------------------
+Meaning of FAT entries.
+
+As we saw earlier, two identical copies of FAT are maintained on the disk. All copies are updated simultaneously whenever files are modified. If access to a FAT fails due to a read error, the OS tries the other copy. Thus, if one copy of the FAT becomes unreadable due to wear or a software accident, the other copy may still make it possible to salvage the files/directories on the disk. 
+Here is a program that prints the contents of the first sector of two copies of FAT for a 12-bit or a 16-bit FAT. On similar lines it can be extended to work for a 32-bit FAT.
+
+Each disk contains two copies of FAT. In the function fat_info( ) the starting sector of each copy of FAT is determined. Next, the function read_fat_info( ) is called for reading and displaying contents of each FAT copy. Since each copy contains several entries, we have displayed only the first 16 entries for a 12-bit & 16-bit FAT. The organization of the FAT types is shown in Figure 7.3.
+
+12-bit FAT
+
+8 bits	8 bits	8 bits	
+						
+						
+E2     E3    O3      E1     O1    O2
+
+16-bit FAT
+
+8 bits	8 bits	8 bits	8 bits	
+								
+								
+E3     E4     E1     E2     O3    O4       O1    O2
+
+32-bit FAT
+
+8 bits	8 bits	8 bits	8 bits	8 bits	8 bits	8 bits	8 bits
+															
+															
+E7     E8     E5     E6      E3     E4     E1     E2    O7     O8     O5    O6     O3    O4     O1    O2
+
+For a 32-bit FAT the seven nibbles (a nibble is a group of 4 bits) E1-E2-E3-E4-E5-E6-E7-E8 form the even entry. Note that the arrangement of these nibbles is E7-E8-E5-E6-E3-E4-E1-E2 because the lower byte is always stored in memory earlier than the higher byte. This means if the value of the 4-byte FAT entry is ABCD, it would be stored as DCBA. The odd entry is represented using the set of nibbles O1-O2-O3-O4-O5-O6-O7-O8. In reality the nibble E8 and O8 don't contribute to the cluster number since each entry in the 32-bit FAT is only 28 bits long.
+On similar lines in a 16-bit FAT the four nibbles E1-E2-E3-E4 form the even entry whereas the set O1-O2-O3-O4 form the odd entry. Similarly, the even and odd entries in a 12-bit FAT are formed by E1-E2-E3 and O1-O2-O3 respectively. Picking up the values present in odd or even entries from a 32-bit FAT or a 16-bit FAT a relatively simple job. However, to pick up the values from a 12-bit FAT we have to use bitwise operators to discard one nibble out of a group of 4 nibbles. This is done in our program through the functions getfat_12( ).
+

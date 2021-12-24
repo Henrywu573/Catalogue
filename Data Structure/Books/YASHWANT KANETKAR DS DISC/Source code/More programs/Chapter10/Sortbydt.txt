@@ -1,0 +1,10 @@
+Take any five dates in dd\mm\yyyy format, and arrange them in asscending order.
+
+Steps to develop the program:
+1. Dates are entered as strings.
+2. Convert the dates into integer values.
+3. Check for validation of dates.
+4. Sort the dates with respect to their integer values.
+5. Display the sorted dates.
+
+To increase the range of dates, we have stored it in 4 bytes using a long intger variable (Under DOS dates are stored in 2 bytes). So to store the day the lower 5 bytes are used. Now to store a month in next 4 bytes we need to multiply the month by 32. Similarly, to store the year it is multiplied by 512. This is done because we are required to store the entire date in one single entity, which is later used to sort the dates.

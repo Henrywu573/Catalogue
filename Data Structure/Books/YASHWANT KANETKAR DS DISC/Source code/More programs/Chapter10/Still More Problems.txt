@@ -1,0 +1,122 @@
+Problem 1:
+
+You are given a string of characters. Your job is to lexicographically sort the strings obtained by doing all possible left circular shifts of the original string. A left circular shift by k positions is defined as follows:
+
+Left_Circular_Shift (a0,a1,a2, . . ., ak-1, ak, ak+1, . . . an-1)=
+		     ak,ak+1, . . ., an-1,a0, a1, . . . ak-1
+
+If the given string length is n, then the total number of strings to be sorted is n.
+
+Consider the  string  abbacd. Strings obtained by all possible left circular shifts of the above
+string are given below :
+
+
+Index of string(Value of k)String Obtained
+
+	0abbacd
+	1bbacda
+	2bacdab
+	3acdabb
+	4cdabba
+	5dabbac
+
+The index of the string is the  number of left circular shifts that have to be applied on the original string to obtain this string.
+
+The sorted form of the above strings is 
+
+
+Index of string(value of k)String
+
+	0abbacd
+	3acdabb
+	2bacdab
+	1bbacda
+	4cdabba
+	5dabbac
+
+
+Input Format :
+
+You will be given the length of the string (i.e., number of characters in the string) followed by the characters in the string, each in a different line.
+
+	<Number of Characters n>
+	<character 0>
+	<character 1>
+	. . .
+	. . .
+
+	<character n-1>
+
+
+Input Example
+
+
+The input corresponding to the above example will be
+
+	6
+	a
+	b
+	b
+	a
+	c
+	d
+
+Output specification
+
+You are required to output the indices of the sorted strings, each in a different line. For example, the output corresponding to the above example will be :
+
+	0
+	3
+	2
+	1
+	4
+	5
+
+IMPORTANT
+
+You are required to output the indices of the strings only, and not the strings themselves.
+-------------------------------------------------------------------------------------------------
+Problem 2:
+
+Implement a variation of the Quick Sort algorithm as given below.
+
+X is an array of N integers to be sorted. The array is partitioned using an element, say X[J], as the pivot such that after partitioning, all elements in the array at positions less than J
+are less than X[J] and all elements in the array at positions greater than J are greater than X[J]. This is done recursively on each of the two partitions, till all the partitions contain one element -- which means the array is sorted.
+
+The partitioning works as follows. The partitioning procedure gives the position J. Let LB and UB be the lower and upper  bound of the subarray respectively. Here, the pivot element A is the middle element of the subarray ie. the element at position (LB+UB)/2.  Two pointers, DOWN and UP, are initialized to the upper and lower bounds of the subarray respectively. At any point during execution, each element in a position greater than UP is greater than or equal to A; and each element in a position lesser than DOWN is lesser than or equal to A. The two pointers UP and DOWN are moved towards each other as follows:
+
+Step 1: repeatedly increase the pointer DOWN by one position until X[DOWN] > A. 
+After DOWN is increased each time, if X[DOWN] < X[DOWN - 1], swap X[DOWN]  and X[DOWN - 1].
+
+Step 2: repeatedly decrease the pointer UP   by one position until X[UP] <= A. 
+After UP is decreased each time, if X[UP] > X[UP + 1], swap X[UP] and X[UP + 1].
+
+Step 3: If UP > DOWN, swap X[DOWN] and X[UP].
+If X[DOWN] < X[DOWN - 1], swap X[DOWN] and X[DOWN - 1].
+If X[UP] > X[UP + 1], swap X[UP] and X[UP + 1].
+
+The above steps are repeated till UP <= DOWN. The position UP is the position J required.
+
+Input specification
+
+The input will be a single line containig an integer N, followed by N integers. Assume N < 50.
+
+Output specification
+
+You have to print out the contents of the array X each time dpartitioning is done. The output should be on a single line containing the array elements separated by a space.
+
+Sample Input
+
+8 25 57 48 37 12 92 86 33
+
+Sample Output
+                         	Explanation:
+
+25 12 33 37 48 57 92 86         sort(0,7) up = 3 X[down] = 48  X[up] = 37
+12 25 33 37 48 57 92 86         sort(0,2) up = 0 X[down] = 25  X[up] = 12
+12 25 33 37 48 57 92 86         sort(1,2) up = 1 X[down] = 33  X[up] = 25
+12 25 33 37 48 57 86 92         sort(4,7) up = 5 X[down] = 86  X[up] = 57
+12 25 33 37 48 57 86 92         sort(6,7) up = 6 X[down] = 92  X[up] = 86
+
+
+-------------------------------------------------------------------------------------------------

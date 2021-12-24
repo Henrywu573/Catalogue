@@ -1,0 +1,1 @@
+In an output restricted deque, the deletion of elements is done at one end only, and allows insertion to be done at both the ends of a deque. Write a program to demonstrate output-restricted deque.

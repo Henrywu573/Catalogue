@@ -1,0 +1,132 @@
+Problem 1 :
+
+You are given a set of  points  (in 2-dimension) with integer co-ordinates . You have to find out the closest pair of points.(i.e., the distance between these two points should be less than distance between any other two points.)
+
+Input Format
+
+The number of points, followed by x and y co-ordinates (all integers) of each point is given in different line.
+
+	<Number of Points n>
+	<x0>
+	<y0>
+	<x1>
+	<y1>
+	<x2>
+	<y2>
+	. . .
+	. . .
+	<xn-1>
+	<yn-1>
+
+Sample Input
+
+	4
+	100
+	100
+	110
+	110
+	200
+	100
+	200
+	300
+
+Output Format :
+
+You should output the indices of the closest points, each in a new line. For example, if you find (xi,yi) and (xj,yj) to be the closest points, you should output i and j in separate lines.
+
+* YOU SHOULD OUTPUT THE INDICES ONLY AND NOT THE POINTS THEMSELVES. 
+* INDICES OF POINTS BEGIN FROM 0.
+
+
+Output Example :
+
+The output for the above example could be
+
+	1
+	0
+
+	or
+
+	0
+	1
+----------------------------------------------------------------------------------------------
+Problem 2 :
+
+A railway network system is spread across many islands. There are N (N <= 50) stations in all, identified by numbers from 1 to N.  Railway lines interconnect the stations. On a  given line a train can travel in any direction between the stations connected by that line. Every island has
+atleast two stations and atleast one line. The network has the following properties:
+
+* If two stations are on the same island, then it  is   possible  to  travel between them by rail.  It may be necessary to go through several lines and intermediate  stations, for this purpose.
+
+* If two stations are on two different islands,  then  there is no railway route to go from one to the other. That is, there are no lines connecting stations on different islands.
+
+
+The input to the program will be
+
+1) 2 integers N and M representing the  number  of  stations and the number of lines respectively
+2) M lines representing the  different  railway-lines.  Each line will have two numbers representing the two stations connected by that line.
+3) An integer Z 
+4) Z lines each having the numbers of two stations
+
+The program should output
+
+) The number of islands in the network, followed by a  new-line.   (Hint : The number of islands is equal to the number of different trees in the spanning forest of the railway network.)
+
+2) For each of the Z lines in (4) above print YES or NO on separate  lines depending on whether the two stations are in one-island or not. Hint: Check if they are on the same spanning  tree.  There are different ways to do this. One possible approach is sketched below.
+
+For each of the Z lines, take one end point and do a traver-sal from that vertex. If during this traversal, you visit the other vertex, then the two vertices are in the same spanning tree.
+
+Sample input
+
+	8 6
+	1 2
+	3 1
+	5 7
+	1 4
+	7 8
+	6 8
+	4
+	1 5
+	5 6
+	3 2
+	7 8
+
+
+Sample output
+
+     2
+     NO
+     YES
+     YES
+     YES
+-------------------------------------------------------------------------------------------------
+Problem 3:
+
+Maze Problem:
+
+Conside a n x n matrix . This represents a maze. The input is a set of pairs of numbers each denoting the obstacles in the maze. Find a path from the starting point(0,0) to the target point( n-1,n-1) without meeting any of the obstacles. Also, find the shortest path. 
+
+Input:
+
+(3,2) (6,6) (7,0) ( 2,8) (5,9) (8,4) (2,4) (0,8) (1,3) (6,3)
+(9,3) (1,9) 3,0) (3,7) (4,2) (7,8) (2,2) (4,5) (5,6) (10,5) (6,2)
+(6,10) (4,0) (7,5) (7,9) (8,1) (5,7) (4,4) (8,7) (9,2) (10,9) (2,6)
+-----------------------------------------------------------------------------------------------
+Problem 4:
+
+Travelling Salesperson Problem:
+
+A salesperson must start at a specified city, visit each of the n-1 other cities exactly once, and then return to the initial city.  The cost of going from city i to city j is C[i,j]. The objective is to find a route through the cities that minimises the total cost. 
+
+-------------------------------------------------------------------------------------------------
+Problem 5:
+
+The game of LIFE takes place on a 2d array of cells, each of which may contain an organism . Let occ(i) be the no. of cells adjacent to cell i that are occupied by an org.. ,is obtained from
+the previous generation appling the following rules:
+
+I. An org.. in cell i survive to the next generation if 2<=occ(i)<=3; otherwise it dies.
+II. An org.. born in empty cell i if 2<=occ(i)<=3; otherwise it remains empty
+
+Write a program that reads initial configuration of occupied cells and prints a series of gene.. Note that the program must maintain two copies of the configuration, since all changes occur simultaneously.
+-------------------------------------------------------------------------------------------------
+
+

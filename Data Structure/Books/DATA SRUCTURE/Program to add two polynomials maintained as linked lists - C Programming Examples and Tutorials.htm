@@ -1,0 +1,924 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0083)http://www.dailyfreecode.com/Code/two-polynomials-maintained-linked-lists-2826.aspx -->
+<!--?xml version="1.0" encoding="iso-8859-1" ?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD id="ctl00_ctl00_Head1"><META 
+content="IE=10.000" http-equiv="X-UA-Compatible">
+
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"><TITLE>
+	Program to add two polynomials maintained as linked lists - C Programming 
+Examples and Tutorials </TITLE><LINK href="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/mystyle.css" 
+rel="Stylesheet" type="text/css"><LINK href="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/jquery-ui-1.8.17.custom.css" 
+rel="stylesheet" type="text/css">
+<SCRIPT src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/jquery.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/jquery-ui.min.js" type="text/javascript"></SCRIPT>
+<!--[if lt IE 7]><style>
+#leftcolumn{margin-left:0}
+</style><![endif]--><!--Google Analytics-->
+<SCRIPT type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33438645-1']);
+  _gaq.push(['_setDomainName', 'dailyfreecode.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</SCRIPT>
+
+<META name="description" content="Code, Example for Program to add two polynomials maintained as linked lists in C Programming">
+<META name="keywords" content="Program to add two polynomials maintained as linked lists, C Programming, Example, Code, Tutorial, Syntax, Data File Structure">
+<META name="GENERATOR" content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY style="margin: 0px;">
+<FORM name="aspnetForm" id="aspnetForm" onsubmit="javascript:return WebForm_OnSubmit();" 
+action="/Code/two-polynomials-maintained-linked-lists-2826.aspx" method="post">
+<DIV><INPUT name="__EVENTTARGET" id="__EVENTTARGET" type="hidden"><INPUT name="__EVENTARGUMENT" 
+id="__EVENTARGUMENT" type="hidden"><INPUT name="__VIEWSTATE" id="__VIEWSTATE" 
+type="hidden" value="/wEPDwUKMTAzMDczNzAwN2RkIM593TR9wcBT1fJe0SugRw/qdu78Dmsq+a+ojIHHbnc="></DIV>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]></SCRIPT>
+
+<SCRIPT src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/WebResource.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]></SCRIPT>
+
+<DIV id="LoginContainer">
+<DIV id="LoginSection">
+<DIV align="left" class="Login-Leftbar" id="ctl00_ctl00_LoginLogout_pnlRandomLink"></DIV>
+<DIV align="right" class="Login-Rightbar">
+<DIV align="right" class="label">Welcome&nbsp;-&nbsp;<SPAN id="ctl00_ctl00_LoginLogout_lblName">Guest! 
+&nbsp;&nbsp;&nbsp;</SPAN><SPAN id="ctl00_ctl00_LoginLogout_divLogin"><A id="ctl00_ctl00_LoginLogout_hlLogin" 
+href="http://www.dailyfreecode.com/UserLogin.aspx">Login</A> &nbsp;/&nbsp;       
+              <A id="ctl00_ctl00_LoginLogout_hlRegister" href="http://www.dailyfreecode.com/CreateUser.aspx">Register 
+Now</A></SPAN><SPAN>                    &nbsp;|&nbsp;                     <A id="ctl00_ctl00_LoginLogout_hlFB" 
+href="http://www.facebook.com/DailyFreeCode" target="_blank" rel="nofollow"><IMG 
+alt="Facebook" src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/facebook10x10.jpg" 
+border="0"></A>&nbsp;                    <A id="ctl00_ctl00_LoginLogout_hlTW" 
+href="http://twitter.com/dailyfreecode" target="_blank" rel="nofollow"><IMG alt="Twitter" 
+src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/twitter10x10.png" 
+border="0"></A></SPAN></DIV></DIV></DIV></DIV>
+<DIV id="MainContainer">
+<DIV id="HeaderSection">
+<TABLE width="100%">
+  <TBODY>
+  <TR>
+    <TD><IMG alt="Logo" src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/logo.gif">&nbsp; 
+                     </TD>
+    <TD>
+      <DIV id="ctl00_ctl00_CH_pnlSearch" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_CH_btnSearch')">
+      <DIV align="right" style="padding-right: 30px;"><SPAN><B>Search:</B><INPUT 
+      name="ctl00$ctl00$CH$txtSearchBox" id="ctl00_ctl00_CH_txtSearchBox" type="text" 
+      size="40"><INPUT name="ctl00$ctl00$CH$btnSearch" id="ctl00_ctl00_CH_btnSearch" type="submit" value="Search"></SPAN></DIV></DIV></TD></TR>
+  <TR>
+    <TD colspan="2">
+      <DIV id="ctl00_ctl00_CH_pnlMenuBar">
+      <DIV id="cat-navbar" style="text-align: center;">
+      <DIV id="nav-menu">
+      <UL>
+        <LI><A id="hlHome" 
+        href="http://www.dailyfreecode.com/Default.aspx">Home</A></LI>
+        <LI><A id="hlArticles" 
+        href="http://www.dailyfreecode.com/Article.aspx">Articles</A></LI>
+        <LI><A id="hlForum" href="http://www.dailyfreecode.com/Message-Board/Forum.aspx">Forum</A></LI>
+        <LI><A id="hlInterviewFAQ" href="http://www.dailyfreecode.com/Interview.aspx">Interview 
+        FAQ</A></LI>
+        <LI><A id="hlActivityLog" href="http://www.dailyfreecode.com/Activitylog/ShowAll.aspx">Activities</A></LI>
+        <LI><A id="hlNews" 
+        href="http://www.dailyfreecode.com/News.aspx">News</A></LI>
+        <LI><A id="hlVideos" 
+        href="http://www.dailyfreecode.com/Videos.aspx">Videos</A></LI>
+        <LI><A id="hlPoll" 
+        href="http://www.dailyfreecode.com/Poll.aspx">Poll</A></LI>
+        <LI><A id="hlHotLinks" 
+        href="http://www.dailyfreecode.com/HotLinks.aspx">Links</A></LI>
+        <LI><A id="hlGeek" href="http://www.dailyfreecode.com/MembersPicView.aspx">People</A></LI>
+        <LI><A id="hlGroups" 
+        href="http://www.dailyfreecode.com/Community.aspx">Groups</A></LI></UL></DIV></DIV></DIV></TD></TR>
+  <TR>
+    <TD colspan="2">
+      <DIV id="ctl00_ctl00_CH_pnlAdvertise">
+      <TABLE width="100%" align="center">
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV data-format="728x90" data-tags="Java%2cSQL%2cC++%2c.Net%2cAsp.Net%2cWCF%2cWPF%2cVS.Net" 
+            data-zone="ron" data-publisher="lqm.go4sharepoint.site" data-type="ad"></DIV></TD>
+          <TD style="background-color: rgb(255, 255, 204);">
+            <DIV class="fb-like-box" data-header="false" data-stream="false" 
+            data-show-faces="false" data-height="90" data-width="220" data-href="https://www.facebook.com/DailyFreeCode"></DIV></TD></TR>
+        <TR>
+          <TD style="height: 3px; background-color: rgb(240, 240, 240);" 
+          colspan="2"></TD></TR></TBODY></TABLE>
+      <DIV id="fb-root"></DIV>
+<SCRIPT>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</SCRIPT>
+      </DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV id="ContentSection">
+<DIV id="InContentSectionMain">
+<DIV id="InContentSectionContent">
+<DIV class="fl wContentPart rbdr">
+<DIV class="mr10">
+<DIV class="w100p"><!-- QUESTION (starts) -->
+<TABLE width="100%" border="0">
+  <TBODY>
+  <TR>
+    <TD align="center" colspan="2">
+      <TABLE width="100%" align="center">
+        <TBODY>
+        <TR>
+          <TD width="480" align="left">
+            <H1 class="h1PageTitle" id="ctl00_ctl00_CC_CM_h1PageTitle">C 
+            Programming Articles</H1></TD>
+          <TD align="right" valign="middle"><A title="Post New Article" class="SubmitLink" 
+            id="ctl00_ctl00_CC_CM_hlSubmitArticle" href="http://www.dailyfreecode.com/MyWork/ArticleModeSelection.aspx">Submit 
+            Article</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align="center" colspan="2">
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align="left">
+            <DIV class="ErrorMsg" id="ctl00_ctl00_CC_CM_valSummary" style="color: red; display: none;"></DIV></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE>
+<TABLE width="100%" border="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD align="left"><SPAN class="DHLlnk" 
+      id="ctl00_ctl00_CC_CM_lblBreadCrum"><A title="Home" class="DHLlnk" href="http://www.dailyfreecode.com/Default.aspx">Home</A>&nbsp;»&nbsp;<A 
+      title="View All Articles" class="DHLlnk" href="http://www.dailyfreecode.com/Article.aspx">Articles</A>&nbsp;»&nbsp;<A 
+      title="All C Programming Articles" class="DHLlnk" href="http://www.dailyfreecode.com/Tutorial/Easy-C_Programming-15.aspx">C 
+      Programming</A>&nbsp;»&nbsp;<A title="All Data File Structure Articles" 
+      class="DHLlnk" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Data-File-Structure-213.aspx">Data 
+      File Structure</A></SPAN></TD>
+    <TD align="right"><A title="Subscribe RSS Feed" class="DHLlnk" id="ctl00_ctl00_CC_CM_hlRSSFeed" 
+      href="http://feeds.feedburner.com/syntaxexamplearticlesRssFeed" target="_blank">RSS 
+      Feeds</A></TD></TR></TBODY></TABLE>
+<DIV class="HdrRow tl txt140">
+<H1 id="ctl00_ctl00_CC_CM_h1SyntaxTitle">Program to add two polynomials 
+maintained as linked lists</H1></DIV>
+<DIV class="HdrRowLevel2 tl"><B>Posted By: </B><SPAN id="ctl00_ctl00_CC_CM_lblPostedBy"><A 
+href="http://www.dailyfreecode.com/User/adriane-miller-1513.aspx">Adriane 
+Miller</A></SPAN>                               &nbsp;&nbsp;&nbsp;               
+  <B>Category: </B><SPAN id="ctl00_ctl00_CC_CM_lblLanguage"><A title="All C Programming Articles" 
+href="http://www.dailyfreecode.com/Tutorial/Easy-C_Programming-15.aspx">C 
+Programming</A></SPAN>        &nbsp;&nbsp;&nbsp;         <SPAN id="ctl00_ctl00_CC_CM_lblPageViews"><B>Views:</B> 
+13257</SPAN></DIV>
+<DIV style="text-align: left;"></DIV>
+<DIV class="MyBox PR3" style="text-align: left;">
+<DIV id="ctl00_ctl00_CC_CM_pnlAdvertisement1"></DIV>
+<DIV style="text-align: left;">
+<H3 class="DisableText" id="ctl00_ctl00_CC_CM_lblDescription">
+<P>Program to add two polynomials maintained as linked lists.</P></H3></DIV>
+<DIV id="ctl00_ctl00_CC_CM_pnlAdvertisement2"></DIV>
+<DIV id="ctl00_ctl00_CC_CM_pnlExample" style="text-align: left;">
+<H2 class="h1Syntax" id="ctl00_ctl00_CC_CM_h3Example" 
+style="display: inline;">Code for Program to add two polynomials maintained as 
+linked lists in C Programming</H2><SPAN id="ctl00_ctl00_CC_CM_lblExample">
+<PRE class="csharpcode">#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;alloc.h&gt;
+
+<SPAN class="rem">/* structure representing a node of a linked list. The node can store term of a polynomial */</SPAN><BR><SPAN class="kwrd">struct</SPAN> polynode
+{
+    <SPAN class="kwrd">float</SPAN> coeff ;
+    <SPAN class="kwrd">int</SPAN> exp ;
+    <SPAN class="kwrd">struct</SPAN> polynode *link ;
+} ;
+
+<SPAN class="kwrd">void</SPAN> poly_append ( <SPAN class="kwrd">struct</SPAN> polynode **, <SPAN class="kwrd">float</SPAN>, <SPAN class="kwrd">int</SPAN> ) ;
+<SPAN class="kwrd">void</SPAN> display_poly ( <SPAN class="kwrd">struct</SPAN> polynode * ) ;
+<SPAN class="kwrd">void</SPAN> poly_add ( <SPAN class="kwrd">struct</SPAN> polynode *, <SPAN class="kwrd">struct</SPAN> polynode *, <SPAN class="kwrd">struct</SPAN> polynode ** ) ;
+
+<SPAN class="kwrd">void</SPAN> main( )
+{
+    <SPAN class="kwrd">struct</SPAN> polynode *first, *second, *total ;
+    <SPAN class="kwrd">int</SPAN> i = 0 ;
+
+    first = second = total = NULL ;  <SPAN class="rem">/* empty linked lists */</SPAN><BR>
+
+    poly_append ( &amp;first, 1.4, 5 ) ;
+    poly_append ( &amp;first, 1.5, 4 ) ;
+    poly_append ( &amp;first, 1.7, 2 ) ;
+    poly_append ( &amp;first, 1.8, 1 ) ;
+    poly_append ( &amp;first, 1.9, 0 ) ;
+
+    clrscr( ) ;
+    display_poly ( first ) ;
+
+    poly_append ( &amp;second, 1.5, 6 ) ;
+    poly_append ( &amp;second, 2.5, 5 ) ;
+    poly_append ( &amp;second, -3.5, 4 ) ;
+    poly_append ( &amp;second, 4.5, 3 ) ;
+    poly_append ( &amp;second, 6.5, 1 ) ;
+
+    printf ( <SPAN class="str">"\n\n"</SPAN> ) ;
+    display_poly ( second ) ;
+
+    <SPAN class="rem">/* draws a dashed horizontal line */</SPAN><BR>
+    printf ( <SPAN class="str">"\n"</SPAN> ) ;
+    <SPAN class="kwrd">while</SPAN> ( i++ &lt; 79 )
+        printf ( <SPAN class="str">"-"</SPAN> ) ;
+    printf ( <SPAN class="str">"\n\n"</SPAN> ) ;
+
+    poly_add ( first, second, &amp;total ) ;
+    display_poly ( total ) ;  <SPAN class="rem">/* displays the resultant polynomial */</SPAN><BR>
+}
+
+<SPAN class="rem">/* adds a term to a polynomial */</SPAN><BR><SPAN class="kwrd">void</SPAN> poly_append ( <SPAN class="kwrd">struct</SPAN> polynode **q, <SPAN class="kwrd">float</SPAN> x, <SPAN class="kwrd">int</SPAN> y )
+{
+    <SPAN class="kwrd">struct</SPAN> polynode *temp ;
+    temp = *q ;
+
+    <SPAN class="rem">/* creates a new node if the list is empty */</SPAN><BR><SPAN class="kwrd">if</SPAN> ( *q == NULL )
+    {
+        *q = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+        temp = *q ;
+    }
+    <SPAN class="kwrd">else</SPAN>
+    {
+        <SPAN class="rem">/* traverse the entire linked list */</SPAN><BR><SPAN class="kwrd">while</SPAN> ( temp -&gt; link != NULL )
+            temp = temp -&gt; link ;
+
+            <SPAN class="rem">/* create new nodes at intermediate stages */</SPAN><BR>
+            temp -&gt; link = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            temp = temp -&gt; link ;
+    }
+
+    <SPAN class="rem">/* assign coefficient and exponent */</SPAN><BR>
+    temp -&gt; coeff = x ;
+    temp -&gt; exp = y ;
+    temp -&gt; link = NULL ;
+}
+
+<SPAN class="rem">/* displays the contents of linked list representing a polynomial */</SPAN><BR><SPAN class="kwrd">void</SPAN> display_poly ( <SPAN class="kwrd">struct</SPAN> polynode *q )
+{
+    <SPAN class="rem">/* traverse till the end of the linked list */</SPAN><BR><SPAN class="kwrd">while</SPAN> ( q != NULL )
+    {
+        printf ( <SPAN class="str">"%.1f x^%d  :  "</SPAN>, q -&gt; coeff, q -&gt; exp ) ;
+        q = q -&gt; link ;
+    }
+
+    printf ( <SPAN class="str">"\b\b\b "</SPAN> ) ;  <SPAN class="rem">/* erases the last colon */</SPAN><BR>
+}
+
+<SPAN class="rem">/* adds two polynomials */</SPAN><BR><SPAN class="kwrd">void</SPAN> poly_add ( <SPAN class="kwrd">struct</SPAN> polynode *x, <SPAN class="kwrd">struct</SPAN> polynode *y,    <SPAN class="kwrd">struct</SPAN>  polynode **s )
+{
+    <SPAN class="kwrd">struct</SPAN> polynode *z ;
+
+    <SPAN class="rem">/* if both linked lists are empty */</SPAN><BR><SPAN class="kwrd">if</SPAN> ( x == NULL &amp;&amp; y == NULL )
+        <SPAN class="kwrd">return</SPAN> ;
+
+    <SPAN class="rem">/* traverse till one of the list ends */</SPAN><BR><SPAN class="kwrd">while</SPAN> ( x != NULL &amp;&amp; y != NULL )
+    {
+        <SPAN class="rem">/* create a new node if the list is empty */</SPAN><BR><SPAN class="kwrd">if</SPAN> ( *s == NULL )
+        {
+            *s = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            z = *s ;
+        }
+        <SPAN class="rem">/* create new nodes at intermediate stages */</SPAN><BR><SPAN class="kwrd">else</SPAN>
+        {
+            z -&gt; link = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            z = z -&gt; link ;
+        }
+
+        <SPAN class="rem">/* store a term of the larger degree polynomial */</SPAN><BR><SPAN class="kwrd">if</SPAN> ( x -&gt; exp &lt; y -&gt; exp )
+        {
+            z -&gt; coeff = y -&gt; coeff ;
+            z -&gt; exp = y -&gt; exp ;
+            y = y -&gt; link ;  <SPAN class="rem">/* go to the next node */</SPAN><BR>
+        }
+        <SPAN class="kwrd">else</SPAN>
+        {
+            <SPAN class="kwrd">if</SPAN> ( x -&gt; exp &gt; y -&gt; exp )
+            {
+                z -&gt; coeff = x -&gt; coeff ;
+                z -&gt; exp = x -&gt; exp ;
+                x = x -&gt; link ;  <SPAN class="rem">/* go to the next node */</SPAN><BR>
+            }
+            <SPAN class="kwrd">else</SPAN>
+            {
+                <SPAN class="rem">/* add the coefficients, when exponents are equal */</SPAN><BR><SPAN class="kwrd">if</SPAN> ( x -&gt; exp == y -&gt; exp )
+                {
+                    <SPAN class="rem">/* assigning the added coefficient */</SPAN><BR>
+                    z -&gt; coeff = x -&gt; coeff + y -&gt; coeff ;
+                    z -&gt; exp = x -&gt; exp ;
+                    <SPAN class="rem">/* go to the next node */</SPAN><BR>
+                    x = x -&gt; link ;
+                    y = y -&gt; link ;
+                }
+            }
+        }
+    }
+
+    <SPAN class="rem">/* assign remaining terms of the first polynomial to the result */</SPAN><BR><SPAN class="kwrd">while</SPAN> ( x != NULL )
+    {
+        <SPAN class="kwrd">if</SPAN> ( *s == NULL )
+        {
+            *s = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            z = *s ;
+        }
+        <SPAN class="kwrd">else</SPAN>
+        {
+            z -&gt; link = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            z = z -&gt; link ;
+        }
+
+        <SPAN class="rem">/* assign coefficient and exponent */</SPAN><BR>
+        z -&gt; coeff = x -&gt; coeff ;
+        z -&gt; exp = x -&gt; exp ;
+        x = x -&gt; link ;  <SPAN class="rem">/* go to the next node */</SPAN><BR>
+    }
+
+    <SPAN class="rem">/* assign remaining terms of the second polynomial to the result */</SPAN><BR><SPAN class="kwrd">while</SPAN> ( y != NULL )
+    {
+        <SPAN class="kwrd">if</SPAN> ( *s == NULL )
+        {
+            *s = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            z = *s ;
+        }
+        <SPAN class="kwrd">else</SPAN>
+        {
+            z -&gt; link = malloc ( <SPAN class="kwrd">sizeof</SPAN> ( <SPAN class="kwrd">struct</SPAN> polynode ) ) ;
+            z = z -&gt; link ;
+        }
+
+        <SPAN class="rem">/* assign coefficient and exponent */</SPAN><BR>
+        z -&gt; coeff = y -&gt; coeff ;
+        z -&gt; exp = y -&gt; exp ;
+        y = y -&gt; link ;  <SPAN class="rem">/* go to the next node */</SPAN><BR>
+    }
+
+    z -&gt; link = NULL ;  <SPAN class="rem">/* assign NULL at end of resulting linked list */</SPAN><BR>
+}
+</PRE></SPAN></DIV>
+<DIV id="ctl00_ctl00_CC_CM_pnlAdvertisement3" style="text-align: left;">
+<TABLE width="98%">
+  <TBODY>
+  <TR>
+    <TD align="left">
+      <DIV data-format="300x250" data-tags="Java%2cSQL%2cC++%2c.Net%2cAsp.Net%2cWCF%2cWPF%2cVS.Net" 
+      data-zone="ron" data-publisher="lqm.go4sharepoint.site" 
+      data-type="ad"></DIV></TD>
+    <TD>&nbsp;&nbsp;</TD>
+    <TD align="right">
+      <DIV data-format="300x250" data-tags="Java%2cSQL%2cC++%2c.Net%2cAsp.Net%2cWCF%2cWPF%2cVS.Net" 
+      data-zone="ron" data-publisher="lqm.go4sharepoint.site" 
+      data-type="ad"></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV class="MyBox">
+<SCRIPT type="text/javascript">        var switchTo5x = true;</SCRIPT>
+
+<SCRIPT src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/buttons.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+    stLight.options({ publisher: '295d0d5f-f570-4440-b445-29f1c40604ff' });</SCRIPT>
+ Share:&nbsp; <SPAN class="st_facebook_hcount" 
+displaytext="Facebook"></SPAN><SPAN class="st_twitter_hcount" displaytext="Tweet"></SPAN><SPAN 
+class="st_sharethis_hcount" displaytext="ShareThis"></SPAN><SPAN class="st_fblike_hcount"></SPAN><SPAN 
+class="st_plusone_hcount"></SPAN></DIV><BR>
+<DIV class="graybox">
+<DIV class="fl w49p rbdr txt120">
+<DIV class="mr10" id="ctl00_ctl00_CC_CM_pnlPreviousLink"><B>Previous Post: 
+</B><BR>
+<DIV class="w100p lh22"><A id="ctl00_ctl00_CC_CM_linkPrevious" href="http://www.dailyfreecode.com/Code/node-end-linked-list-recursion-2825.aspx">Program 
+to add a new node at the end of linked list using recursion</A><BR></DIV></DIV>
+<DIV class="cb">&nbsp;</DIV></DIV>
+<DIV class="fr w49p txt120">
+<DIV class="mr10" id="ctl00_ctl00_CC_CM_pnlNextLink"><B>Next Post: </B><BR>
+<DIV class="w100p lh22"><A id="ctl00_ctl00_CC_CM_linkNext" href="http://www.dailyfreecode.com/Code/multiply-two-polynomials-maintained-2827.aspx">Program 
+to multiply two polynomials maintained as linked lists</A><BR></DIV></DIV>
+<DIV class="cb">&nbsp;</DIV></DIV>
+<DIV class="cb">&nbsp;</DIV></DIV><BR>
+<DIV class="MyBox RowHighlight">
+<DIV id="ctl00_ctl00_CC_CM_SearchMessage1_pnlFindMore">                    
+Didn't find what you were looking for?                    Find more on <A id="ctl00_ctl00_CC_CM_SearchMessage1_lnkFindMore" 
+href="http://www.dailyfreecode.com/MySearchResult.aspx?q=program+add+polynomials+maintained+linked+lists&amp;stype=all">Program 
+to add two polynomials maintained as linked lists</A>                    Or get 
+<A id="ctl00_ctl00_CC_CM_SearchMessage1_lnkFindMoreUpdates" href="http://www.dailyfreecode.com/Updates.aspx?q=Program+to+add+two+polynomials+maintained+as+linked+lists">search 
+suggestion and latest updates</A>.                 </DIV></DIV><BR>
+<DIV class="HdrRowLevel2 tl" style="text-align: left;">
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR><!--Author Pic and Basic Details-->
+    <TD align="left" valign="top">
+      <TABLE style="height: 155px;" border="0">
+        <TBODY>
+        <TR>
+          <TD align="center" id="ctl00_ctl00_CC_CM_pnlUserImage"><A href="http://www.dailyfreecode.com/User/adriane-miller-1513.aspx"><IMG 
+            width="153" height="153" align="bottom" alt="Adriane Miller" src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/fb8fe65d5e7057229c387da0aff703db.png" 
+            border="0"></A></TD></TR></TBODY></TABLE></TD>
+    <TD width="100%" align="left" valign="top">
+      <TABLE align="left" style="width: 100%; vertical-align: top;" 
+        border="0"><TBODY>
+        <TR>
+          <TD width="100%" id="ctl00_ctl00_CC_CM_pnlUserDetails"><A href="http://www.dailyfreecode.com/User/adriane-miller-1513.aspx">Adriane 
+            Miller</A> author of Program to add two polynomials maintained as 
+            linked lists is from Frankfurt, <A href="http://www.dailyfreecode.com/Country/Germany.aspx">Germany</A>. 
+          </TD></TR>
+        <TR>
+          <TD>                                &nbsp;                           
+             </TD></TR>
+        <TR>
+          <TD align="left" id="ctl00_ctl00_CC_CM_pnlViewAllSubmission"><A 
+            href="http://www.dailyfreecode.com/ShowAllArticles/Programmer1513.aspx"><B>View 
+            All 
+Articles</B></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV><BR>
+<DIV class="BoxStyle GreenBox" id="ctl00_ctl00_CC_CM_pnlRelatedTopics" style="text-align: left;">
+<H3 class="h3AnsCnt" id="ctl00_ctl00_CC_CM_lblRelatedTopics">Related Articles 
+and Code:</H3><BR>
+<UL id="ctl00_ctl00_CC_CM_listviewReleatedLinks" style="font-weight: bold; list-style-type: square;">
+  <LI><A href="http://www.dailyfreecode.com/Code/multiply-two-polynomials-maintained-2827.aspx">Program 
+  to multiply two polynomials maintained as linked lists</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/represent-polynomial-terms-singly-974.aspx">Represent 
+  a polynomial in terms of a singly linked list and then add two three variables 
+  polynomials</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/maintains-library-shop-stock-link-list-468.aspx">Program 
+  that maintains library shop stock using link list</A></LI>
+  <LI><A 
+  href="http://www.dailyfreecode.com/Code/maintain-linked-list-2815.aspx">Program 
+  to maintain a linked list</A></LI>
+  <LI><A 
+  href="http://www.dailyfreecode.com/Code/two-polynomials-2807.aspx">Program to 
+  add two polynomials</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/two-polynomial-functions-1117.aspx">Program 
+  to add two polynomial functions</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/node-asscending-order-linked-list-2816.aspx">Program 
+  to add a new node to the asscending order linked list</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/node-end-linked-list-recursion-2825.aspx">Program 
+  to add a new node at the end of linked list using recursion</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/doubly-circular-link-list-circular-2427.aspx">Doubly 
+  circular link list or Circular doubly link list </A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/merge-two-linked-list-restricting-2817.aspx">Program 
+  to merge two linked list, restricting commomn elements to occur only 
+  once</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/compare-two-linked-lists-recursion-2823.aspx">Program 
+  to compare two linked lists using recursion</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/sort-linked-list-readjusting-links-2819.aspx">Program 
+  to sort a linked list by readjusting the links</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/multiply-two-polynomials-2808.aspx">Program 
+  to multiply two polynomials</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/addition-two-polynomial-1132.aspx">Program 
+  to addition of two polynomial</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/prolog-concatenate-two-lists-giving-3092.aspx">Prolog 
+  program to concatenate two lists giving third list</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/prolog-merge-two-ordered-list-3129.aspx">Prolog 
+  program to merge two ordered list generating an ordered list</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/concatenate-linked-list-end-another-2821.aspx">Program 
+  to concatenate one linked list at end of another and than to erase all nodes 
+  present in the linked list</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/illustrate-implementation-double-ended-987.aspx">Program 
+  to illustrate the implementation of Double Ended linked list    as a 
+  StackProgram to illustrate the implementation of Double Ended linked 
+  list</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/illustrate-implementation-double-ended-988.aspx">Program 
+  to illustrate the implementation of Double Ended linked list    as a 
+  Queue</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/illustrate-implementation-linked-list-989.aspx">Program 
+  to illustrate the implementation of linked list as a Stack</A></LI></UL></DIV>
+<DIV>        &nbsp;    </DIV>
+<DIV class="BoxStyle GreenBox" id="ctl00_ctl00_CC_CM_pnlDisplayCategoryArticles" 
+style="text-align: left;">
+<H3 class="h3AnsCnt" id="ctl00_ctl00_CC_CM_lblDisplayCategoryArticles">Other 
+Interesting Articles in C Programming:</H3><BR>
+<UL id="ctl00_ctl00_CC_CM_listviewDisplayCategoryArticles" style="font-weight: bold; list-style-type: square;">
+  <LI><A href="http://www.dailyfreecode.com/Code/compare-string-s2-another-string-s1-1462.aspx">Program 
+  to compare one string s2 to another string s1. Print the difference of first 
+  unmatched characters (Without Using strcmp function)</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/print-multiplication-tables-while-loop-2204.aspx">Program 
+  to print multiplication tables using do while loop</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/false-position-method-x1-exp-x1-2410.aspx">FALSE 
+  POSITION METHOD USING x1-exp(-x1)</A></LI>
+  <LI><A 
+  href="http://www.dailyfreecode.com/Code/frequency-counting-2590.aspx">Program 
+  for frequency counting</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/implement-multi-access-threaded-queue-2115.aspx">Implement 
+  a multi-access threaded queue with multiple threads inserting and multiple 
+  threads extracting from the queue</A></LI>
+  <LI><A 
+  href="http://www.dailyfreecode.com/Code/display-numbers-loop-2475.aspx">Program 
+  to display numbers using for loop</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/find-maximum-minimum-element-array-2113.aspx">Program 
+  to find the maximum and minimum element in an array using threads</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/read-file-name-serach-whole-hard-drive-751.aspx">Program 
+  to read a file name, serach it in the whole Hard Drive and delete  it if 
+  found</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/converts-hexadecimal-value-decimal-580.aspx">Program 
+  that converts hexadecimal value in decimal, octal and binary. </A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/evaluate-fibonacci-series-checking-1426.aspx">Program 
+  to evaluate fibonacci series and checking whether or not it is fibonacci 
+  number </A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/solve-following-expression-parallely-2090.aspx">SOLVE 
+  FOLLOWING EXPRESSION PARALLELY. X[k] = U[k] + r * ( Z[k] + r * U[k]) + t * ( 
+  U[k+3] + r * ( U[k+2] + r * U[k+1] ) )+ t * t * ( U[k+6] + r * ( U[</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/counting-2578.aspx">Use of  if  
+  for counting</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/example-illustrating-block-statement-2516.aspx">Example 
+  of illustrating block of statement</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/posix-threads-library-2-thread-linux-2110.aspx">Using 
+  the POSIX threads library, write a 2-thread program for Linux.Once the thread 
+  spawning is done, the first thread (T1) should wait for user input</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/demonstrate-bitwise-and-or-xor-2483.aspx">Program 
+  that demonstrate the use of bitwise and, or, xor, ones compliment, left shift 
+  and right shift </A></LI>
+  <LI><A 
+  href="http://www.dailyfreecode.com/Code/calculate-interest-2637.aspx">Program 
+  calculate the Interest</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/displays-extern-variable-2514.aspx">Program 
+  that displays use of extern variable</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/illustration-nested-loops-2585.aspx">Illustration 
+  of nested for loops</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/link-list-600.aspx">Program of 
+  link list</A></LI>
+  <LI><A href="http://www.dailyfreecode.com/Code/compare-string-s2-another-string-s1-2238.aspx">Program 
+  to compare one string s2 to another string s1 and also first unmatched 
+  characters without using strcmp function from string.h</A></LI></UL>
+<DIV>            &nbsp;        </DIV></DIV>
+<TABLE width="100%" align="left"><!--User Details and Related Links--><!--- Comment Box --->
+  <TBODY>
+  <TR align="left" id="ctl00_ctl00_CC_CM_pnlValidUser">
+    <TD align="left" colspan="2">
+      <DIV class="MyBox PR2">
+      <DIV><B>Please enter your Comment</B></DIV>
+      <DIV><TEXTAREA name="ctl00$ctl00$CC$CM$txtComment" tabindex="3" title="Please Enter Your Comment" disabled="disabled" id="ctl00_ctl00_CC_CM_txtComment" rows="15" cols="73"></TEXTAREA><BR><SPAN 
+      id="ctl00_ctl00_CC_CM_rfvtxtComment" 
+      style="color: red; display: none;">*</SPAN><SPAN class="ErrorMsg" id="ctl00_ctl00_CC_CM_regtxtComment" 
+      style="color: red; display: none;">*</SPAN></DIV>
+      <DIV class="FR5">
+      <UL>
+        <LI>Comment should be atleast 30 Characters.</LI>
+        <LI>Please put code inside [Code] your code [/Code].</LI></UL></DIV>
+      <DIV id="ctl00_ctl00_CC_CM_pnlShowLoginLnk">                        
+      &nbsp;<A class="SubmitLink" id="ctl00_ctl00_CC_CM_lnkLogin" style="font-size: 1.5em;" 
+      href="javascript:__doPostBack('ctl00$ctl00$CC$CM$lnkLogin','')">Please 
+      login to post comment</A></DIV><BR></DIV></TD></TR>
+  <TR>
+    <TD colspan="2">                &nbsp;            </TD></TR><!--Display Comment -->
+  <TR>
+    <TD align="left" colspan="2"><SPAN id="ctl00_ctl00_CC_CM_lblCommentsCount" 
+      style="font-weight: bold;">No Comment Found, Be the First to post 
+      comment!</SPAN></TD></TR>
+  <TR>
+    <TD width="100%" colspan="2"></TD></TR>
+  <TR>
+    <TD align="left" colspan="2"></TD></TR></TBODY></TABLE>
+<SCRIPT type="text/javascript">
+    function DisplayFullImage(ctrlimg) {
+        txtCode = "<HTML><HEAD>"
+        + "</HEAD><BODY TOPMARGIN=0 LEFTMARGIN=0 MARGINHEIGHT=0 MARGINWIDTH=0><CENTER>"
+        + "<IMG src='" + ctrlimg.src + "' BORDER=0 NAME=FullImage "
+        + "onload='window.resizeTo(document.FullImage.width,document.FullImage.height)'>"
+        + "</CENTER>"
+        + "</BODY></HTML>";
+        mywindow = window.open('', 'image', 'toolbar=0,location=0,menuBar=0,scrollbars=0,resizable=1,width=50,height=50');
+        mywindow.document.open();
+        mywindow.document.write(txtCode);
+        mywindow.document.close();
+        }
+
+//    function DisplayFullImage(ctrlimg) {
+//        txtCode = "<HTML><HEAD><Title>Article Image</Title>"
+//        + "</HEAD><BODY TOPMARGIN='0' LEFTMARGIN='0' MARGINHEIGHT='0' MARGINWIDTH='0'><CENTER>"
+//        + "<IMG src='" + ctrlimg.src + "' BORDER='0' NAME='FullImage'"
+//        + "onload='window.resizeTo(document.FullImage.width + 50,document.FullImage.height + 100)'/>"
+//        + "</CENTER>"
+//        + "</BODY></HTML>";
+//        mywindow = window.open('', 'image', 'toolbar=0,location=0,menuBar=0,scrollbars=0,resizable=1,width=900,height=800');
+//        mywindow.document.open();
+//        mywindow.document.write(txtCode);        
+//    }
+</SCRIPT>
+
+<SCRIPT language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("#ctl00_ctl00_CC_CM_pnlSyntax").find("p").attr("class", "pcontent");
+        $("#ctl00_ctl00_CC_CM_pnlExample").find("p").attr("class", "pcontent");
+        $("#ctl00_ctl00_CC_CM_pnlExample").find("img").css("cursor", "pointer");
+        $("#ctl00_ctl00_CC_CM_pnlExample").find("img").attr("onclick", "DisplayFullImage(this);");
+        $("#ctl00_ctl00_CC_CM_pnlExample").find("a").attr("rel", "nofollow");
+    });
+</SCRIPT>
+</DIV></DIV>
+<DIV class="cb">&nbsp;</DIV></DIV>
+<DIV class="fr wSidePart">
+<DIV>
+<DIV class="w100p">
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD align="left"></TD></TR>
+  <TR>
+    <TD align="left">
+      <DIV class="MyBoxHighlight PR3 w100p">
+      <DIV id="ctl00_ctl00_CC_CR_LanguageCtrl1_pnlDisplaySyntaxExample">
+      <UL class="ulLeftMnuMain">
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="C Programming" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-C_Programming-15.aspx">C 
+        Programming</A>
+        <UL class="ulLeftMnuMain">
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="View All" href="http://www.dailyfreecode.com/Tutorial/Easy-C_Programming-15.aspx">View 
+          All</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Homework Help" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Homework-Help-212.aspx">Homework 
+          Help</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Data File Structure" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Data-File-Structure-213.aspx">Data 
+          File Structure</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Projects" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Projects-217.aspx">Projects</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Beginners" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Beginners-218.aspx">Beginners</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="BIOS Programming" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/BIOS-Programming-224.aspx">BIOS 
+          Programming</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="TSR Programming" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/TSR-Programming-225.aspx">TSR 
+          Programming</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Interrupt Programming" 
+          href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Interrupt-Programming-226.aspx">Interrupt 
+          Programming</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Mouse Programming" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Mouse-Programming-227.aspx">Mouse 
+          Programming</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Keyboard Programming" 
+          href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Keyboard-Programming-228.aspx">Keyboard 
+          Programming</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Parallel Port Programming" 
+          href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Parallel-Port-Programming-229.aspx">Parallel 
+          Port Programm...</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Parallel Processing Programs" 
+          href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Parallel-Processing-Programs-230.aspx">Parallel 
+          Processing Pr...</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Computer Graphics" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Computer-Graphics-245.aspx">Computer 
+          Graphics</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Mathematics Program" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Mathematics-Program-257.aspx">Mathematics 
+          Program</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Numerical Methods" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Numerical-Methods-265.aspx">Numerical 
+          Methods</A></LI>
+          <LI>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A title="Interview FAQ" href="http://www.dailyfreecode.com/Tutorial_Simple_C_Programming-15/Interview-FAQ-201.aspx">Interview 
+          FAQ</A></LI>
+          <LI></LI></UL></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Assembly Language" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Assembly_Language-49.aspx">Assembly 
+        Language</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Artificial Intelligence" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-Artificial_Intelligence-53.aspx">Artificial 
+        Intelligence</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="C++ Programming" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-CPP-16.aspx">C++ 
+        Programming</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Visual C++" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Visual_C-62.aspx">Visual 
+        C++</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="OOAD" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-OOAD-54.aspx">OOAD</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Cobol" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Cobol-50.aspx">Cobol</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Java" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Java-14.aspx">Java</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="SQL Server" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-SQL_Server-12.aspx">SQL 
+        Server</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Asp.net MVC" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Aspnet_MVC-59.aspx">Asp.net 
+        MVC</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Rest and WCF Services" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-Rest_and_WCF_Services-60.aspx">Rest 
+        and WCF Services</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Entity Framework" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Entity_Framework-58.aspx">Entity 
+        Framework</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Knockout.Js" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-KnockoutJs-61.aspx">Knockout.Js</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Unix / Linux / Ubuntu" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-Unix__Linux__Ubuntu-40.aspx">Unix 
+        / Linux / Ubuntu</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Networking" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Networking-29.aspx">Networking</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="OOPs Concept" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-OOPs_Concept-21.aspx">OOPs 
+        Concept</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="HTML" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-HTML-11.aspx">HTML</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Dos" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Dos-51.aspx">Dos</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="SQL" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-SQL-52.aspx">SQL</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="System Analysis &amp; Design" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-System_Analysis__Design-55.aspx">System 
+        Analysis &amp; Design</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Gadgets" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Gadgets-56.aspx">Gadgets</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Internet" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Internet-57.aspx">Internet</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="CSS" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-CSS-10.aspx">CSS</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Javascript" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Javascript-17.aspx">Javascript</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title=".Net Framework" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Net_Framework-37.aspx">.Net 
+        Framework</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Asp.net" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Aspnet-7.aspx">Asp.net</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="C#" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-C_Sharp-4.aspx">C#</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="VB.Net" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-VB_Net-5.aspx">VB.Net</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Python" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Python-63.aspx">Python</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Perl" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Perl-64.aspx">Perl</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Oracle" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Oracle-13.aspx">Oracle</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Software Engineering" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-Software_Engineering-19.aspx">Software 
+        Engineering</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="RDBMS Terms" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-RDBMS_Terms-18.aspx">RDBMS 
+        Terms</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="AJAX Framework" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-AJAX_Framework-9.aspx">AJAX 
+        Framework</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Design Pattern" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Design_Pattern-38.aspx">Design 
+        Pattern</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="UML" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-UML-39.aspx">UML</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="WPF" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-WPF-41.aspx">WPF</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="WCF" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-WCF-42.aspx">WCF</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="SEO" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-SEO-65.aspx">SEO</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="PowerShell" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-PowerShell-48.aspx">PowerShell</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Visual Studio" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Visual_Studio-44.aspx">Visual 
+        Studio</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="WWF" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-WWF-43.aspx">WWF</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="BizTalk Server" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-BizTalk_Server-45.aspx">BizTalk 
+        Server</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Azure" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Azure-46.aspx">Azure</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="General" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-General-47.aspx">General</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Testing" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Testing-20.aspx">Testing</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Online Certifications" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-Online_Certifications-30.aspx">Online 
+        Certifications</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="PHP" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-PHP-35.aspx">PHP</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="My SQL" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-My_SQL-36.aspx">My 
+        SQL</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="LinQ" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-LinQ-6.aspx">LinQ</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Project Management" 
+        class="lMnuTtllnk" href="http://www.dailyfreecode.com/Tutorial/Easy-Project_Management-22.aspx">Project 
+        Management</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="Silverlight" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Silverlight-23.aspx">Silverlight</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="XML" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-XML-25.aspx">XML</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="MS Office" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-MS_Office-32.aspx">MS 
+        Office</A></LI>
+        <LI class="MyBox RowBG1 pad-5">&nbsp;<A title="Windows OS" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-Windows_OS-33.aspx">Windows 
+        OS</A></LI>
+        <LI class="MyBox RowBG2 pad-5">&nbsp;<A title="DHTML" class="lMnuTtllnk" 
+        href="http://www.dailyfreecode.com/Tutorial/Easy-DHTML-31.aspx">DHTML</A></LI>
+        <LI class="MyBox PR4 pad-5">&nbsp;<A title="Sharepoint" class="lMnuTtllnk" 
+        href="http://www.go4sharepoint.com/" 
+      target="_blank">Sharepoint</A></LI></UL></DIV></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV class="cb">&nbsp;</DIV></DIV>
+<DIV class="cb">&nbsp;</DIV></DIV></DIV></DIV>
+<DIV align="center" id="footer-container">
+<DIV>                    &nbsp;</DIV>
+<DIV style="background-color: rgb(240, 240, 240);">                    &nbsp;    
+            </DIV>
+<DIV class="MaxWidth">
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD align="left"><B>RSS Feeds:</B></TD>
+    <TD align="left">
+      <DIV><A id="ctl00_ctl00_RSSftrArticle" href="http://feeds.feedburner.com/syntaxexamplearticlesRssFeed" 
+      target="_blank">Articles</A>&nbsp;|                                        
+      &nbsp; <A id="ctl00_ctl00_RSSftrForum" href="http://feeds.feedburner.com/syntaxexampleForum" 
+      target="_blank">Forum</A>&nbsp;|                                        
+      &nbsp; <A id="ctl00_ctl00_RSSftrUser" href="http://feeds.feedburner.com/syntaxexampleMembersRssFeed" 
+      target="_blank">New Users</A>&nbsp;|                                       
+       &nbsp; <A id="ctl00_ctl00_RSSftrLog" href="http://feeds.feedburner.com/syntaxexampleActivityLogRssFeed" 
+      target="_blank">Activities</A>&nbsp;|                                      
+        &nbsp; <A id="ctl00_ctl00_RSSftrIntFAQ" href="http://feeds.feedburner.com/syntaxexampleInterview" 
+      target="_blank">Interview                                            
+      FAQ</A>&nbsp;| &nbsp;<A id="ctl00_ctl00_RSSftrPoll" href="http://feeds.feedburner.com/syntaxexamplePollRssFeed" 
+      target="_blank">Poll</A>&nbsp;| &nbsp;<A id="ctl00_ctl00_RSSftrLinks" 
+      href="http://feeds.feedburner.com/syntaxexampleHotLinks" 
+      target="_blank">Hotlinks</A></DIV></TD></TR>
+  <TR>
+    <TD align="left"><B>Social Networking:</B></TD>
+    <TD align="left">
+      <DIV><A href="http://www.dailyfreecode.com/HallofFame.aspx">Hall of 
+      Fame</A> &nbsp;|&nbsp; <A id="ctl00_ctl00_hlFacebook" href="http://www.facebook.com/DailyFreeCode" 
+      target="_blank">Facebook</A>                                        
+      &nbsp;|&nbsp; <A id="ctl00_ctl00_hlTweet" href="http://twitter.com/dailyfreecode" 
+      target="_blank">                                            Twitter</A> 
+      &nbsp;|&nbsp; <A id="ctl00_ctl00_hlLinkedIn" href="http://www.linkedin.com/groups?gid=3227304" 
+      target="_blank">LinkedIn</A></DIV></TD></TR>
+  <TR>
+    <TD align="left"><B>Terms:</B></TD>
+    <TD align="left">
+      <DIV><A href="http://www.dailyfreecode.com/TermsOfUse.aspx">Terms of 
+      Use</A> &nbsp;|&nbsp; <A href="http://www.dailyfreecode.com/PrivacyPolicy.aspx">Privacy 
+      Policy</A>&nbsp;|&nbsp;                                          <A href="http://www.dailyfreecode.com/ContactUs.aspx">Contact 
+      us</A></DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV>                        &nbsp;</DIV>
+<DIV id="ctl00_ctl00_pnlFooter"><A title="DMCA" href="http://www.dmca.com/Protection/Status.aspx?ID=af722e18-04b2-47d9-b00f-40bdff76faf1" 
+target="_blank" rel="nofollow"><IMG alt="DMCA.com" src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/dmca_protected_sml_120m.png"></A></DIV>
+<DIV>                        &nbsp;</DIV>
+<DIV>                        Copyright © 2008-2012                     
+</DIV></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_ctl00_CC_CM_valSummary"));
+var Page_Validators =  new Array(document.getElementById("ctl00_ctl00_CC_CM_rfvtxtComment"), document.getElementById("ctl00_ctl00_CC_CM_regtxtComment"));
+//]]></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var ctl00_ctl00_CC_CM_valSummary = document.all ? document.all["ctl00_ctl00_CC_CM_valSummary"] : document.getElementById("ctl00_ctl00_CC_CM_valSummary");
+ctl00_ctl00_CC_CM_valSummary.showmessagebox = "True";
+ctl00_ctl00_CC_CM_valSummary.showsummary = "False";
+ctl00_ctl00_CC_CM_valSummary.validationGroup = "comment";
+var ctl00_ctl00_CC_CM_rfvtxtComment = document.all ? document.all["ctl00_ctl00_CC_CM_rfvtxtComment"] : document.getElementById("ctl00_ctl00_CC_CM_rfvtxtComment");
+ctl00_ctl00_CC_CM_rfvtxtComment.controltovalidate = "ctl00_ctl00_CC_CM_txtComment";
+ctl00_ctl00_CC_CM_rfvtxtComment.errormessage = "Please enter comment";
+ctl00_ctl00_CC_CM_rfvtxtComment.display = "Dynamic";
+ctl00_ctl00_CC_CM_rfvtxtComment.validationGroup = "comment";
+ctl00_ctl00_CC_CM_rfvtxtComment.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_ctl00_CC_CM_rfvtxtComment.initialvalue = "";
+var ctl00_ctl00_CC_CM_regtxtComment = document.all ? document.all["ctl00_ctl00_CC_CM_regtxtComment"] : document.getElementById("ctl00_ctl00_CC_CM_regtxtComment");
+ctl00_ctl00_CC_CM_regtxtComment.controltovalidate = "ctl00_ctl00_CC_CM_txtComment";
+ctl00_ctl00_CC_CM_regtxtComment.errormessage = "Please enter valid and descriptive comment. Comment should be atleast 30 Characters.";
+ctl00_ctl00_CC_CM_regtxtComment.display = "Dynamic";
+ctl00_ctl00_CC_CM_regtxtComment.validationGroup = "comment";
+ctl00_ctl00_CC_CM_regtxtComment.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_ctl00_CC_CM_regtxtComment.validationexpression = "[\\S\\s]{15,5000}$";
+//]]></SCRIPT>
+
+<DIV><INPUT name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" type="hidden" 
+value="B2B31B54"></DIV>
+<SCRIPT src="Program%20to%20add%20two%20polynomials%20maintained%20as%20linked%20lists%20-%20C%20Programming%20Examples%20and%20Tutorials_files/WebResource(1).js" type="text/javascript"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]></SCRIPT>
+</FORM>
+<SCRIPT type="text/javascript">
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script'); 
+        _dma.type = 'text/javascript';
+        _dma.async = true; 
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js');}
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000);})();
+</SCRIPT>
+</BODY></HTML>

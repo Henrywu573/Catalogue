@@ -1,0 +1,1 @@
+When the hard disk is new the files and directories are properly organized. As the hard disk grows old, some laxity sets in and one tends to create files with duplicate names in different directories.  Write a program to locate these duplicate filenames. 

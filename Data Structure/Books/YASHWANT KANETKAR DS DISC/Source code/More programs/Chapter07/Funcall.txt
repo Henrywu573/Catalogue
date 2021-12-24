@@ -1,0 +1,3 @@
+Function Calls and Stack
+
+A stack is used by programming languages for implementing function calls. write a program to check how function calls are made using stack.

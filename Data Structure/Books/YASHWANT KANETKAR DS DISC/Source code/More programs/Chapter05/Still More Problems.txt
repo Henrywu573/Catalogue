@@ -1,0 +1,109 @@
+Problem 1:
+
+Write a program to create a linked list of numbers in sorted(ascending) order and then to delete some specified elements from the list.
+
+Input/Output Specification: 
+
+Input to your program is a positive integer N on a line followed by N numbers in the next line. You have to build the sorted list for these  N numbers. Next line in the input is another positive integer M followed by M integers in the next line. These M integers are a subset of N integers given earlier. You must delete these elements from the linked list. Next line in the input is a positive integer K. Your program should print the Kth element of the sorted list.
+
+Sample Input
+
+	8
+	2 5 9 2 3 1 8 4
+	2
+	2 5
+	5
+        
+Sample Output
+
+	8
+
+-------------------------------------------------------------------------------------------------
+Problem 2:
+
+Round Robin Scheduling Problem:
+
+One of the scheduling techniques that multitasking operating systems use to allocate the CPU amongst running processes is the Round Robin Scheduling Technique.  Write a program in to simulate the technique as described below.
+
+In this technique, the running processes are arranged in a queue and are scheduled sequentially, each for a time-slice of fixed duration. If a process is unable to finish in the given  time-slice, it is suspended and placed at the end of the queue and next process in the queue is scheduled.  When a process finishes execution, it is removed from the queue. If a process finishes execution before exhausting the given time-slice, the remaining time in the time-slice is used to create the time-slice for the next process in the queue. If the total time of the simulation finishes while a process is executing, the time for which the process ran in that time slice is deducted from the time entry of the process and the process is retained as the first process of the queue. 
+
+Input Specification
+
+The input to the program will be an integer(<num>), indicating the number of processes in the queue, followed by <num> pairs of integers (<pid> <time>), with the first integer specifying the process id and the second integer specifying the number of time units required by the process to complete execution. These pairs will be followed by an integer (<len>), indicating the number of time units making up one time-slice in the schedule. The total duration of the simulation (<total>) (in time units) is specified as the last integer.  Each line in the input is terminated by a newline.
+
+Input Structure:
+
+<num>
+<pid> <time>
+<pid> <time>
+...
+<len>
+<total>
+
+Output Specification
+
+The output of the program should be a series of integer pairs denoting the state of the processes in the queue, with the first integer indicating the process-id and the second integer indicating the remaining time of the process. Each pair should be on a separate line. If there are no processes remaining in the queue, output a pair of zeros(0 0), separated by a space, terminated by a newline.
+-------------------------------------------------------------------------------------------------
+Problem 3:
+
+Write a program to merge two linked lists.
+
+Input specification
+
+The input to the program will be two lines, each terminated by EOLN. 
+
+Line 1 : sequence of integers for the first list
+Line 2 : sequence of integers for the second list
+
+The integers appearing on each of the lines may not be in ascending order. So you must arrange the integers on a line as a linked list in non-decreasing order. Once a line of input is read, the integers on that line must be output as an ordered list of numbers on the same line terminated by an EOLN. 
+
+After obtaining two ordered linked lists, you must merge them such that there are no duplicate elements in the resultant list and the new list has elements in a non-decreasing order.
+
+The elements in the new list must be printed on the same line terminated by EOLN.
+
+The elements in the input list  will be integers and duplicate integers will not be provided on a line of input.
+
+Output specification
+
+The output of your program must consist of three lines, each terminated by EOLN.
+
+Line 1 : elements of the first list in ascending order. 
+Line 2 : elements of the second list in ascending order. 
+Line 3 : elements of the merged list in ascending order. 
+
+In case the output list is empty, output an EOLN.
+
+Sample Input
+
+       20 10 5 13 30
+       5 2 10 9
+
+Sample Output
+
+      5 10 13 20 30
+      2 5 9 10
+      2 5 9 10 13 20 30
+-------------------------------------------------------------------------------------------------
+Problem 4:
+
+N numbers, starting from 1, are placed around a circular table. Starting from 1 every Kth number around the table is removed. This process is continued until all the numbers are removed from the table.
+
+For example If N = 10 and K = 3 the order in which numbers removed are 
+
+1 4 7 10 5 9 6 3 8 2
+
+Write a program which prints out the sequence of numbers in the same order as removed for any given N and K.
+
+Input Specification
+
+Two numbers N and K given on a single line terminated by an EOLN.
+
+Sample Input
+
+   10   3
+
+Sample Output
+
+   1 4 7 10 5 9 6 3 8 2
+
+------------------------------------------------------------------------------------------------

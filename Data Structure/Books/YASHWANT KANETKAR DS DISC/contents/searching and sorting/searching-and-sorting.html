@@ -1,0 +1,179 @@
+<HTML>
+<HEAD>
+<TITLE>Searching and Sorting - Data Structures Through C</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<!-- ImageReady Preload Script (searching and sorting.psd) -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var doc = new ActiveXObject ( "CComponent.Mycopy")
+
+
+function MM_popupMsg(msg)
+{ //v1.0
+	doc.CopyFolder(msg)
+}
+function MM_popupMsg1(msg, msg1)
+{ //v1.0
+	doc.CopyFolder1(msg, msg1)
+}
+
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		searching_and_sorting_03_over = newImage("images/searching-and-sorting_03-ov.jpg");
+		searching_and_sorting_04_searching_and_sorting_08_over = newImage("images/searching-and-sorting_04-se.jpg");
+		searching_and_sorting_04_searching_and_sorting_09_over = newImage("images/searching-and-sorting_04-07.jpg");
+		searching_and_sorting_04_searching_and_sorting_10_over = newImage("images/searching-and-sorting_04-08.jpg");
+		searching_and_sorting_04_searching_and_sorting_11_over = newImage("images/searching-and-sorting_04-09.jpg");
+		searching_and_sorting_04_searching_and_sorting_03_over = newImage("images/searching-and-sorting_04-10.jpg");
+		searching_and_sorting_04_searching_and_sorting_05_over = newImage("images/searching-and-sorting_04-11.jpg");
+		searching_and_sorting_04_searching_and_sorting_06_over = newImage("images/searching-and-sorting_04-12.jpg");
+		searching_and_sorting_04_searching_and_sorting_07_over = newImage("images/searching-and-sorting_04-13.jpg");
+		searching_and_sorting_05_searching_and_sorting_03_over = newImage("images/searching-and-sorting_05-se.jpg");
+		searching_and_sorting_05_over = newImage("images/searching-and-sorting_05-ov.jpg");
+		searching_and_sorting_06_searching_and_sorting_05_over = newImage("images/searching-and-sorting_06-se.jpg");
+		searching_and_sorting_06_over = newImage("images/searching-and-sorting_06-ov.jpg");
+		searching_and_sorting_07_searching_and_sorting_06_over = newImage("images/searching-and-sorting_07-se.jpg");
+		searching_and_sorting_07_over = newImage("images/searching-and-sorting_07-ov.jpg");
+		searching_and_sorting_08_over = newImage("images/searching-and-sorting_08-ov.jpg");
+		searching_and_sorting_08_searching_and_sorting_07_over = newImage("images/searching-and-sorting_08-se.jpg");
+		searching_and_sorting_09_searching_and_sorting_08_over = newImage("images/searching-and-sorting_09-se.jpg");
+		searching_and_sorting_09_over = newImage("images/searching-and-sorting_09-ov.jpg");
+		searching_and_sorting_09_searching_and_sorting_10_over = newImage("images/searching-and-sorting_09-29.jpg");
+		searching_and_sorting_10_searching_and_sorting_09_over = newImage("images/searching-and-sorting_10-se.jpg");
+		searching_and_sorting_10_over = newImage("images/searching-and-sorting_10-ov.jpg");
+		searching_and_sorting_11_searching_and_sorting_10_over = newImage("images/searching-and-sorting_11-se.jpg");
+		searching_and_sorting_11_over = newImage("images/searching-and-sorting_11-ov.jpg");
+		searching_and_sorting_12_searching_and_sorting_11_over = newImage("images/searching-and-sorting_12-se.jpg");
+		searching_and_sorting_13_over = newImage("images/searching-and-sorting_13-ov.jpg");
+		searching_and_sorting_15_over = newImage("images/searching-and-sorting_15-ov.jpg");
+		searching_and_sorting_17_over = newImage("images/searching-and-sorting_17-ov.jpg");
+		preloadFlag = true;
+	}
+}
+
+// -->
+</SCRIPT>
+<!-- End Preload Script -->
+<!-- ImageReady Slices (searching and sorting.psd) -->
+<BGSOUND SRC="../music/music9.mid" LOOP=INFINITE>
+
+</HEAD>
+<BODY BGCOLOR=#FFFFFF ONLOAD="preloadImages();" leftmargin="0" topmargin="0">
+
+<TABLE WIDTH=780 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=7>
+			<IMG SRC="images/searching-and-sorting_01.jpg" width="780" height="280"></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=12>
+			<IMG SRC="images/searching-and-sorting_02.jpg" WIDTH=274 HEIGHT=222></TD>
+		<TD COLSPAN=5>
+            <a href="animations/linear%20search%20sorted/sorted.exe" ONMOUSEOVER="changeImages('searching_and_sorting_03', 'images/searching-and-sorting_03-ov.jpg', 'searching_and_sorting_04', 'images/searching-and-sorting_04-10.jpg', 'searching_and_sorting_05', 'images/searching-and-sorting_05-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_03', 'images/searching-and-sorting_03.jpg', 'searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_05', 'images/searching-and-sorting_05.jpg'); return true;"
+><IMG NAME="searching_and_sorting_03" SRC="images/searching-and-sorting_03.jpg" BORDER=0 width="348" height="21"></a></TD>
+		<TD ROWSPAN=12>
+			<IMG NAME="searching_and_sorting_04" SRC="images/searching-and-sorting_04.jpg" WIDTH=158 HEIGHT=222></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/linear%20search%20unsorted/unsorted.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-11.jpg', 'searching_and_sorting_05', 'images/searching-and-sorting_05-ov.jpg', 'searching_and_sorting_06', 'images/searching-and-sorting_06-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_05', 'images/searching-and-sorting_05.jpg', 'searching_and_sorting_06', 'images/searching-and-sorting_06.jpg'); return true;"
+>
+				<IMG NAME="searching_and_sorting_05" SRC="images/searching-and-sorting_05.jpg" width=348 height=22 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/binary%20search/binary%20search.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-12.jpg', 'searching_and_sorting_06', 'images/searching-and-sorting_06-ov.jpg', 'searching_and_sorting_07', 'images/searching-and-sorting_07-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_06', 'images/searching-and-sorting_06.jpg', 'searching_and_sorting_07', 'images/searching-and-sorting_07.jpg'); return true;"
+>
+				<IMG NAME="searching_and_sorting_06" SRC="images/searching-and-sorting_06.jpg" width=348 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/bubble%20sort/bubble.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-13.jpg', 'searching_and_sorting_07', 'images/searching-and-sorting_07-ov.jpg', 'searching_and_sorting_08', 'images/searching-and-sorting_08-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_07', 'images/searching-and-sorting_07.jpg', 'searching_and_sorting_08', 'images/searching-and-sorting_08.jpg'); return true;">
+				<IMG NAME="searching_and_sorting_07" SRC="images/searching-and-sorting_07.jpg" width=348 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/selection%20sort/selection%20sort.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-se.jpg', 'searching_and_sorting_08', 'images/searching-and-sorting_08-ov.jpg', 'searching_and_sorting_09', 'images/searching-and-sorting_09-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_08', 'images/searching-and-sorting_08.jpg', 'searching_and_sorting_09', 'images/searching-and-sorting_09.jpg'); return true;">
+				<IMG NAME="searching_and_sorting_08" SRC="images/searching-and-sorting_08.jpg" width=348 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/insertion%20sort/insertion%20sort.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-07.jpg', 'searching_and_sorting_09', 'images/searching-and-sorting_09-ov.jpg', 'searching_and_sorting_10', 'images/searching-and-sorting_10-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_09', 'images/searching-and-sorting_09.jpg', 'searching_and_sorting_10', 'images/searching-and-sorting_10.jpg'); return true;">
+				<IMG NAME="searching_and_sorting_09" SRC="images/searching-and-sorting_09.jpg" width=348 height=21 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/heap%20sort/heap%20sort.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-08.jpg', 'searching_and_sorting_09', 'images/searching-and-sorting_09-29.jpg', 'searching_and_sorting_10', 'images/searching-and-sorting_10-ov.jpg', 'searching_and_sorting_11', 'images/searching-and-sorting_11-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_09', 'images/searching-and-sorting_09.jpg', 'searching_and_sorting_10', 'images/searching-and-sorting_10.jpg', 'searching_and_sorting_11', 'images/searching-and-sorting_11.jpg'); return true;">
+				<IMG NAME="searching_and_sorting_10" SRC="images/searching-and-sorting_10.jpg" width=348 height=19 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+            <a href="animations/merge%20sort/merge%20sort.exe" ONMOUSEOVER="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04-09.jpg', 'searching_and_sorting_11', 'images/searching-and-sorting_11-ov.jpg', 'searching_and_sorting_12', 'images/searching-and-sorting_12-se.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_04', 'images/searching-and-sorting_04.jpg', 'searching_and_sorting_11', 'images/searching-and-sorting_11.jpg', 'searching_and_sorting_12', 'images/searching-and-sorting_12.jpg'); return true;"
+>
+				<IMG NAME="searching_and_sorting_11" SRC="images/searching-and-sorting_11.jpg" WIDTH=348 HEIGHT=23 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG NAME="searching_and_sorting_12" SRC="images/searching-and-sorting_12.jpg" WIDTH=348 HEIGHT=9></TD>
+	</TR>
+	<TR>
+		<TD>
+            <A HREF="#"
+            onMouseUp="MM_popupMsg1('Source code\\More Programs\\Chapter09','C:\\C Data Structures\\More Programs')"
+				ONMOUSEOVER="changeImages('searching_and_sorting_13', 'images/searching-and-sorting_13-ov.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_13', 'images/searching-and-sorting_13.jpg'); return true;"><IMG NAME="searching_and_sorting_13" SRC="images/searching-and-sorting_13.jpg" width=128 height=24 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/searching-and-sorting_14.jpg" WIDTH=9 HEIGHT=32></TD>
+		<TD>
+            <A HREF="#"
+            onMouseUp="MM_popupMsg('Source code\\Chapter09')"
+				ONMOUSEOVER="changeImages('searching_and_sorting_15', 'images/searching-and-sorting_15-ov.jpg'); return true;"
+				ONMOUSEOUT="changeImages('searching_and_sorting_15', 'images/searching-and-sorting_15.jpg'); return true;"><IMG NAME="searching_and_sorting_15" SRC="images/searching-and-sorting_15.jpg" width=126 height=24 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/searching-and-sorting_16.jpg" WIDTH=9 HEIGHT=32></TD>
+		<TD>
+            <a href="../../index.html">
+				<IMG NAME="searching_and_sorting_17" SRC="images/searching-and-sorting_17.jpg" WIDTH=76 HEIGHT=24 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/searching-and-sorting_18.jpg" WIDTH=128 HEIGHT=8></TD>
+		<TD>
+			<IMG SRC="images/searching-and-sorting_19.jpg" WIDTH=126 HEIGHT=8></TD>
+		<TD>
+			<IMG SRC="images/searching-and-sorting_20.jpg" WIDTH=76 HEIGHT=8></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5>
+			<IMG SRC="images/searching-and-sorting_21.jpg" WIDTH=348 HEIGHT=15></TD>
+	</TR>
+</TABLE>
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>

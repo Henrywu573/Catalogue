@@ -1,0 +1,446 @@
+Problem 1:
+
+Write a program to generate a boolean OR of two digital signals.
+
+A signal has two states, a high state and a low state. It is given as an array of positive integers in ascending order. Each pair of integer indicates the range of the signal in a high
+state. The array size will be even, so that the signal starts with a low state and ends with a low state.
+
+A signal
+3 4 5 9 10 11
+would look like
+
+            ______    __________________    ______  
+____________|    |____|                |____|    |____________________
+            3    4    5                9    10   11      
+
+So given two signals
+
+3 4 5 9 10 11
+1 2 6 12 13 14
+
+            ______    __________________    ______  
+____________|    |____|                |____|    |____________________
+            3    4    5                9    10   11      
+  ______                   ____________________________    ______
+__|    |___________________|                          |____|    |_____
+  1    2                   6                          12   13   14
+
+The boolean OR is
+
+1 2 3 4 5 12 13 14
+  ______    ______    _________________________________    ______
+__|    |____|    |____|                               |____|    |_____
+  1    2    3    4    5                               12   13   14
+
+
+The input will be two signals each with exactly five high states So each signal would be ten positive integers seperated by a space. A number would not be duplicated in the same signal. A number used in the first signal would not be used in the second signal. Output should be a signal which is the boolean OR of the two input signals.
+
+Sample Input
+
+2 5 6 10 20 23 38 45 51 52
+1 4 7 9 14 19 21 24 30 31 
+
+Output
+
+1 5 6 10 14 19 20 24 30 31 38 45 51 52
+
+3    4    5                               12   13   14
+
+-------------------------------------------------------------------------------------------------
+Problem 2:
+
+Knapsack problem:
+
+Given an integer K and n item of different sizes such that the ith item has an integer size ki, find a subset of the items whose sizes sum to exactly K, or determine that no such subset exists.
+
+Input :
+2, 3 ,5, 6
+Try for K=4 K=8 ...
+------------------------------------------------------------------------------------------------
+Problem 3:
+
+Stuttering subsequence problem:
+
+Given two sequences A,B, find the maximal value of i such that B raised to i is a subsequence of A. 
+------------------------------------------------------------------------------------------------
+Problem 4:
+
+Kth smallest element:
+
+Given a sequence of n elements and an integer k such that 1 <= k <= n , find the kth smallest element.
+
+-----------------------------------------------------------------------------------------------
+Problem 5:
+
+Write a program to print out a particular pattern from a given odd matrix.
+
+Sample Input   
+
+for eg.,if the given matrix is 3*3 and is as follows:
+       1 2 3 
+       4 5 6
+       7 8 9
+
+With the pattern,the matrix looks like this.
+
+           1-2 3
+           | | |
+           4 5 6
+           |   |
+           7-8-9
+
+Output:
+           5 2 1 4 7 8 9 6 3
+------------------------------------------------------------------------------------------------ Problem 6:
+               
+Superimposing one matrix on another and finding the result:
+
+A matrix (say a) is superimposed on another matrix (say b) such that the middle element of a is placed on an element (say position(i,j) of b. The sum of the products of elements of a and b (except the product of the element(i,j) of b with the middle element of a) is placed at
+(i,j) of the resultant matrix. This process repeats for each and every of b. The resultant matrix is would be as shown in sample output.
+
+Sample Input
+                
+5	(matrix b)
+	1 2 1 2 3
+	1 0 0 3 1
+	3 4 1 0 2
+	2 1 2 1 3
+	0 0 2 4 1
+                         
+3	(matrix a)
+	1 1 0
+	0 1 1
+	1 0 1
+
+
+Sample Output
+
+	2 2 5 4 3
+	5 7 10 7 5
+	6 6 2 10 5
+	4 11 10 7 6
+	2 5 7 4 4
+
+-------------------------------------------------------------------------------------------------
+Proble 7:
+
+Set operations:
+
+Sample Input
+
+3 lines containing the no. and elements of a set.
+The next 4 lines contain the set operations to be performed.
+
+(eg.) 6 1 2 3 4 5 6
+	4 1 5 6 7
+	3 1 4 5
+	A*B
+	A+B
+	B*C
+	A-C
+
+Sample Output
+
+4 lines giving the the no. of elements in the resultant set due to each operation
+
+(eg.)	3
+	7
+	2
+	3
+-------------------------------------------------------------------------------------------------
+Problem 8:
+
+Write a program that finds the largest contiguous sum of an array of numbers given as input to your program. The program should first accept the number of elements in the array as the input. Then it should accept the elements of the array. The output should be the largest contiguous sum. 
+
+The input to the program will be as follows.(Each on a separate line).
+
+        <number of elements in the array>
+        <element 0>
+        <element 1>
+        .
+        .
+        <element n-1>
+
+The output should be in the following format.(Each on separate line).
+
+        <The largest contiguous sum>
+
+Sample Input
+
+8
+100
+-200
+-300
+40
+400
+-90
+999
+234
+
+So here the number of elements in the array is 8. The elements are the next 8 numbers given as input. So here it is clear that the largest contiguous sum is the sum of the elements 40,400,-90,999,234
+
+Sample Ouput
+
+1583
+-------------------------------------------------------------------------------------------------
+Problem 9:
+
+Given the order of a square matrix and the elements as inputs,  write a program that calculates the largest sum possible along a row, a column or a diagonal. The output is the largest sum out of all  these possible combinations. The first input to your program will be the order of the
+square matrix. Then the elements will be fed in the row major order. i.e. all the columns
+of a row are to be completely filled before proceeding on to the next row. Note that the diagonals can be not only from Right hand top to Left hand bottom and from left hand top to right hand bottom but also along the subsidiary diagonals.
+
+Sample Input
+
+       1    2   -3
+    -2    4      9
+    -5    9      8
+
+column/row  sums are easily understood but for the consideration of the
+diagonal sums ..
+-5;  -2 + 9;  1+4+8;  2+9;   -3;   1;  2 + (-2);   -3 + 4+(-5);  9+9;   8;
+
+The input to the program will be as follows.(Each on a separate line).
+
+        <order of the square matrix>
+        <element [0][0]>
+        <element [0][1]>
+        .
+        .
+        <element [0][n-1]>
+        <element [1][0]>
+        <element [1][1]>
+        .
+        .
+        <element [1][n-1]
+        .
+        .
+        <element [n-1][0]>
+        <element [n-1][1]>
+        .
+        .
+        <element [n-1][n-1]
+
+The output should be in the following format.(Each on separate line).
+
+        <the largest sum>
+
+Sample input for the above matrix problem:
+3
+1
+2
+3
+-2
+4
+9
+-5
+9
+8
+
+Here calculate all the possible sums along rows e.g. 1+2+3, etc , along columns e.g. (-3)+9+8 etc, and along diagonals 9+9 etc. The output should be the maximum of all these.
+
+Expected output to the example input:
+18
+------------------------------------------------------------------------------------------------
+Problem 10:
+
+Write a program for maintaining the appointments of patients in different departments of a hospital. Assume that each patient has a unique integer-identifier(id) and so also every department. A patient can seek appointments to one or more departments and is also allowed to cancel an appointment from any department. The program should be able to list out at any time the
+number of patients who have valid appointments with a given department or the number
+of departments with which a given patient has appointments.
+
+INPUT
+------
+
+The input to your program is a sequence of commands each command on a separate line. There are four commands as follows:
+
+1)  S   patient-id  department-id
+	Example
+	S 3013 1023
+	(Patient with id 3013 is seeking appointment from department with id 1023)
+
+2)  C   patient-id  department-id
+	Example:
+	C 10293 0112
+	(Patient with id 10293 is cancelling his appointment from department with id 0112)
+
+3)  D  department-id
+	Example
+	D 23
+
+Output
+-------
+
+Print the total number of patients who have valid appointments with the department having the id 23. Cancelled appointments should not be counted. Terminate your output by EOLN. If there are no appointments for the department then your program must output 0 followed by an EOLN. The output
+must not have any sign and there should be no leading zeroes in the output.
+
+4)  P  patient-id
+	Example:
+	P 101
+
+Print the total number of departments with which the patient with id 101 has valid appointments. Cancelled appointments should not be counted. Terminate your output by an EOLN. If the patient does not have any valid appointment with any department then your program must output 0 followed by an EOLN. The output must not have any sign and there should be no leading zeroes in the output. 
+
+Your program must be capable of handling any number of departments and any number of patients. You may assume that there are no receding blanks before the command character and that erroneous input will not be given to your program. Each command line is terminated by EOLN and the input is terminated by an EOF. 
+
+Sample Input
+
+S 100 200
+S 100 201
+S 100 203
+S 101 203
+S 101 240
+C 100 200
+S 101 207
+C 101 240
+P 100
+D 203
+D 200
+S 100 200
+S 101 231
+D 200
+S 102 245
+D 203
+P 104
+
+-------------------------------------------------------------------------------------------------
+Problem 11:
+
+A set can be implemented using arrays. Write a program to implement the basic set operations on sets of the  following specifications. The set may hold maximum of 100 elements. The elements of the sets are integers. The operations to be performed on these sets are
+
+1. Intersection denoted by the letter I
+   An intersection of sets A and B yields a set whose elements are both in A and B
+
+2. Difference denoted by the letter D
+   A difference B yields a set whose elements are the elements of A not in B
+
+The elements in a set will be given as a sequence of integers on a line and EOLN will mark the end of the sequence.
+
+The input consists of 3 lines
+
+line 1: elements of set A
+line 2: elements of set B
+line 3: set operator( I or D )
+
+The output should consist of the result ofoperation
+
+A <operator> B
+
+The elements of the resultant set  must be output on a line separated by blanks and without any leading zeroes. The line must be terminated by an EOLN.
+
+Note that the elements of the input sets will be given in non-decreasing order. The elements in the output must also be in non-decreasing order.
+
+Sample Input
+
+  0 23 456 765 1000 5678 7654 8001 10000
+23 234 543 765 1235 10000 12347
+    I
+
+Sample Output
+
+ 23  765 10000
+
+Sample Input
+
+ -10 0 15 25 125
+ -15 -10 0 20
+  D
+
+Sample Output
+
+  15 25 125
+
+-------------------------------------------------------------------------------------------------
+Problem 12:
+
+Given a set of vertical and a set of horizontal line segments, in the format specified below, write a program to find the total number of crossings amongst the line segments.  ( See figure below ).
+
+                   |          |
+                   |          |
+              -----|----------|---------------
+                   |          |
+                   |          |
+                   |     -----|---------------------
+                   |          |
+                   |          |
+                   |
+              -----|----------------
+                   |
+Input :-
+
+The input to your program will be as follows:
+
+line 1: an integer m    {number of horizontal line segments}
+line 2: an integer n    {number of vertical line segments}
+line 3: x11 x12 y1 x21 x22 y2 ...xm1 xm2 ym
+       {3m integers specifying the horizontal lines}
+line 4: y11 y12 x1 y21 y22 x2 ... yn1 yn2 xn
+       {3n integers specifying the  vertical lines}
+
+In line3, three integers define a line segment
+
+Example:- x11 x12 and y1 define a horizontal line segment with
+         endpoint co-ordinates (x11, y1) and (x12, y1).
+
+Similarly in line 4, y11 y12 and x1 define a vertical line segment with endpoint co-ordinates (x1, y11) and (x1, y12).
+
+Assume that the maximum number of horizontal line segments is 20. Similarly the maximum number of vertical line segments is 20.
+
+Note that if two line segments merely touch each other and do not cross then it is not a valid crossing. For example the following are not valid crossings.
+
+                                          |
+                --------+-----------      |
+                        |                 |-----------
+                        |      |          |
+                        |      |
+                        |      |         _____________
+                        |      |                     |
+                        |      +-------------        |
+                        |                            |
+                                                     |
+Sample Input
+
+3
+2
+1 10 3 30 2 5 4 20 6
+10 1 5 25 30 100
+
+Smaple Output
+
+3
+
+Sample Input
+
+1
+1
+10 20 10
+20 15 15
+
+Sample Output
+0
+
+------------------------------------------------------------------------------------------------
+Problem 13:
+
+A "saddle point" of a matrix A is defined as the element A[i,j] such that A[i,j] is the smallest element in row "i" of the matrix and the largest element in column "j" of the matrix. Given a 9x9 matrix whose elements are non-negative integers, you have to output its saddle point if it exists or -1 (minus one) if the saddle point does not exist. The saddle point if it exists, is always unique.
+
+Assume that the rows and the columns of the matrix are numbered from 1 to 9. The input consists of the 9x9 matrix ie. there are 9 lines with 9 integers on each line. If the given matrix has a saddle point, you have to output three integers on a line terminated by EOLN. The three integers, in order, are the saddle point, the row index and the column index of the saddle point.
+
+Integer numbers on the same line must be output separated by blanks and without any leading zeroes. If the given matrix does not have a saddle point, you must output -1 on a line terminated by EOLN.
+
+Sample Input
+
+2   3   4   5   6   7   8   9   10
+4   5   6   7   8   9   10  11  12
+8   9   10  11  12 13   14  15  16
+2   3   4   5   6   7   8   9   10
+3   5   6   7   8   9   10  11  12
+2   3   4   5   6   7   8   9   10
+7   5   6   7   8   9   10  11  12
+2   3   4   5   6   7   8   9   10
+6   3   4   5   6   7   8   9   10
+
+Sample Output
+
+  8 3 1
+
+In the above matrix, the integer 8 at position [3,1] is the saddle point, as per the definition of the saddle point given above.
+
+------------------------------------------------------------------------------------------------

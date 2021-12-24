@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<TITLE>Queue - Data Structures Through C</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<!-- ImageReady Preload Script (queue.psd) -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var doc = new ActiveXObject ( "CComponent.Mycopy")
+
+
+function MM_popupMsg(msg)
+{ //v1.0
+	doc.CopyFolder(msg)
+}
+function MM_popupMsg1(msg, msg1)
+{ //v1.0
+	doc.CopyFolder1(msg, msg1)
+}
+
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		queue_01_queue_03_over = newImage("images/queue_01-queue_03_over.jpg");
+		queue_02_queue_09_over = newImage("images/queue_02-queue_09_over.jpg");
+		queue_02_queue_03_over = newImage("images/queue_02-queue_03_over.jpg");
+		queue_02_queue_05_over = newImage("images/queue_02-queue_05_over.jpg");
+		queue_02_queue_06_over = newImage("images/queue_02-queue_06_over.jpg");
+		queue_02_queue_07_over = newImage("images/queue_02-queue_07_over.jpg");
+		queue_02_queue_08_over = newImage("images/queue_02-queue_08_over.jpg");
+		queue_03_over = newImage("images/queue_03-over.jpg");
+		queue_03_queue_05_over = newImage("images/queue_03-queue_05_over.jpg");
+		queue_04_queue_09_over = newImage("images/queue_04-queue_09_over.jpg");
+		queue_04_queue_03_over = newImage("images/queue_04-queue_03_over.jpg");
+		queue_04_queue_05_over = newImage("images/queue_04-queue_05_over.jpg");
+		queue_04_queue_06_over = newImage("images/queue_04-queue_06_over.jpg");
+		queue_04_queue_07_over = newImage("images/queue_04-queue_07_over.jpg");
+		queue_04_queue_08_over = newImage("images/queue_04-queue_08_over.jpg");
+		queue_05_queue_03_over = newImage("images/queue_05-queue_03_over.jpg");
+		queue_05_over = newImage("images/queue_05-over.jpg");
+		queue_05_queue_06_over = newImage("images/queue_05-queue_06_over.jpg");
+		queue_06_queue_05_over = newImage("images/queue_06-queue_05_over.jpg");
+		queue_06_over = newImage("images/queue_06-over.jpg");
+		queue_06_queue_07_over = newImage("images/queue_06-queue_07_over.jpg");
+		queue_07_queue_06_over = newImage("images/queue_07-queue_06_over.jpg");
+		queue_07_over = newImage("images/queue_07-over.jpg");
+		queue_07_queue_08_over = newImage("images/queue_07-queue_08_over.jpg");
+		queue_08_queue_07_over = newImage("images/queue_08-queue_07_over.jpg");
+		queue_08_over = newImage("images/queue_08-over.jpg");
+		queue_09_over = newImage("images/queue_09-over.jpg");
+		queue_09_queue_08_over = newImage("images/queue_09-queue_08_over.jpg");
+		queue_10_queue_09_over = newImage("images/queue_10-queue_09_over.jpg");
+		queue_11_over = newImage("images/queue_11-over.jpg");
+		queue_13_over = newImage("images/queue_13-over.jpg");
+		queue_15_over = newImage("images/queue_15-over.jpg");
+		preloadFlag = true;
+	}
+}
+
+// -->
+</SCRIPT>
+<!-- End Preload Script -->
+<!-- ImageReady Slices (queue.psd) -->
+<BGSOUND SRC="../music/music7.mid" LOOP=INFINITE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF ONLOAD="preloadImages();" leftmargin="0" topmargin="0">
+<TABLE WIDTH=780 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=8>
+			<IMG NAME="queue_01" SRC="images/queue_01.jpg" width="780" height="233"></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=10>
+			<IMG NAME="queue_02" SRC="images/queue_02.jpg" WIDTH=274 HEIGHT=211></TD>
+		<TD COLSPAN=6>
+            <a href="animations/queue/q.exe" ONMOUSEOVER="changeImages('queue_01', 'images/queue_01-queue_03_over.jpg', 'queue_02', 'images/queue_02-queue_03_over.jpg', 'queue_03', 'images/queue_03-over.jpg', 'queue_04', 'images/queue_04-queue_03_over.jpg', 'queue_05', 'images/queue_05-queue_03_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_01', 'images/queue_01.jpg', 'queue_02', 'images/queue_02.jpg', 'queue_03', 'images/queue_03.jpg', 'queue_04', 'images/queue_04.jpg', 'queue_05', 'images/queue_05.jpg'); return true;"
+><IMG NAME="queue_03" SRC="images/queue_03.jpg" BORDER=0 width="358" height="21"></a></TD>
+		<TD ROWSPAN=10>
+			<IMG NAME="queue_04" SRC="images/queue_04.jpg" WIDTH=148 HEIGHT=211></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+            <a href="animations/circular%20queue/circular%20queue.exe" ONMOUSEOVER="changeImages('queue_02', 'images/queue_02-queue_05_over.jpg', 'queue_03', 'images/queue_03-queue_05_over.jpg', 'queue_04', 'images/queue_04-queue_05_over.jpg', 'queue_05', 'images/queue_05-over.jpg', 'queue_06', 'images/queue_06-queue_05_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_02', 'images/queue_02.jpg', 'queue_03', 'images/queue_03.jpg', 'queue_04', 'images/queue_04.jpg', 'queue_05', 'images/queue_05.jpg', 'queue_06', 'images/queue_06.jpg'); return true;">
+				<IMG NAME="queue_05" SRC="images/queue_05.jpg" width=358 height=21 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+            <a href="animations/deque/deque.exe" ONMOUSEOVER="changeImages('queue_02', 'images/queue_02-queue_06_over.jpg', 'queue_04', 'images/queue_04-queue_06_over.jpg', 'queue_05', 'images/queue_05-queue_06_over.jpg', 'queue_06', 'images/queue_06-over.jpg', 'queue_07', 'images/queue_07-queue_06_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_02', 'images/queue_02.jpg', 'queue_04', 'images/queue_04.jpg', 'queue_05', 'images/queue_05.jpg', 'queue_06', 'images/queue_06.jpg', 'queue_07', 'images/queue_07.jpg'); return true;"
+>
+				<IMG NAME="queue_06" SRC="images/queue_06.jpg" width=358 height=22 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+            <a href="animations/input%20restricted/input_r_deque.exe" ONMOUSEOVER="changeImages('queue_02', 'images/queue_02-queue_07_over.jpg', 'queue_04', 'images/queue_04-queue_07_over.jpg', 'queue_06', 'images/queue_06-queue_07_over.jpg', 'queue_07', 'images/queue_07-over.jpg', 'queue_08', 'images/queue_08-queue_07_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_02', 'images/queue_02.jpg', 'queue_04', 'images/queue_04.jpg', 'queue_06', 'images/queue_06.jpg', 'queue_07', 'images/queue_07.jpg', 'queue_08', 'images/queue_08.jpg'); return true;"
+
+>
+				<IMG NAME="queue_07" SRC="images/queue_07.jpg" width=358 height=19 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+            <a href="animations/output%20restricted/output_r_deque.exe" ONMOUSEOVER="changeImages('queue_02', 'images/queue_02-queue_08_over.jpg', 'queue_04', 'images/queue_04-queue_08_over.jpg', 'queue_07', 'images/queue_07-queue_08_over.jpg', 'queue_08', 'images/queue_08-over.jpg', 'queue_09', 'images/queue_09-queue_08_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_02', 'images/queue_02.jpg', 'queue_04', 'images/queue_04.jpg', 'queue_07', 'images/queue_07.jpg', 'queue_08', 'images/queue_08.jpg', 'queue_09', 'images/queue_09.jpg'); return true;">
+				<IMG NAME="queue_08" SRC="images/queue_08.jpg" width=358 height=20 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+            <a href="animations/priority/priority%20queue.exe" 
+				ONMOUSEOVER="changeImages('queue_02', 'images/queue_02-queue_09_over.jpg', 'queue_04', 'images/queue_04-queue_09_over.jpg', 'queue_09', 'images/queue_09-over.jpg', 'queue_10', 'images/queue_10-queue_09_over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_02', 'images/queue_02.jpg', 'queue_04', 'images/queue_04.jpg', 'queue_09', 'images/queue_09.jpg', 'queue_10', 'images/queue_10.jpg'); return true;"
+>
+				<IMG NAME="queue_09" SRC="images/queue_09.jpg" width=358 height=23 BORDER=0></a></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+			<IMG NAME="queue_10" SRC="images/queue_10.jpg" WIDTH=358 HEIGHT=10></TD>
+	</TR>
+	<TR>
+		<TD>
+            <A HREF="#"
+            onMouseUp="MM_popupMsg1('Source code\\More Programs\\Chapter07','C:\\C Data Structures\\More Programs')"
+				ONMOUSEOVER="changeImages('queue_11', 'images/queue_11-over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_11', 'images/queue_11.jpg'); return true;"><IMG NAME="queue_11" SRC="images/queue_11.jpg" BORDER=0 width="127" height="25"></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/queue_12.jpg" WIDTH=10 HEIGHT=36></TD>
+		<TD>
+            <A HREF="#"
+            
+				onMouseUp="MM_popupMsg('Source code\\Chapter07')"
+				ONMOUSEOVER="changeImages('queue_13', 'images/queue_13-over.jpg'); return true;"
+				ONMOUSEOUT="changeImages('queue_13', 'images/queue_13.jpg'); return true;"><IMG NAME="queue_13" SRC="images/queue_13.jpg" width=125 height=25 BORDER=0></A></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/queue_14.jpg" WIDTH=9 HEIGHT=36></TD>
+		<TD>
+            <a href="../../index.html">
+				<IMG NAME="queue_15" SRC="images/queue_15.jpg" WIDTH=77 HEIGHT=25 BORDER=0></a></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/queue_16.jpg" WIDTH=10 HEIGHT=36></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/queue_17.jpg" WIDTH=127 HEIGHT=11></TD>
+		<TD>
+			<IMG SRC="images/queue_18.jpg" WIDTH=125 HEIGHT=11></TD>
+		<TD>
+			<IMG SRC="images/queue_19.jpg" WIDTH=77 HEIGHT=11></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=6>
+			<IMG SRC="images/queue_20.jpg" WIDTH=358 HEIGHT=39></TD>
+	</TR>
+</TABLE>
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>
